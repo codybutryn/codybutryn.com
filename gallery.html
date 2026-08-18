@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- impeccable-disable cream-palette: the desk ground of the estimate-packet world, chosen at the direction round -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Flat File — Cody Butryn · Concepts, Brand &amp; Video Work</title>
+<meta name="description" content="Mockups, brand concepts, ad creative, and video work from Cody Butryn's flat file. Not everything shipped — all of it shows how the work gets made.">
+<link rel="canonical" href="https://codybutryn.com/gallery.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://codybutryn.com/gallery.html">
+<meta property="og:title" content="The Flat File — Cody Butryn">
+<meta property="og:description" content="Concepts, brand boards, ad creative, and video work — filed and labeled.">
+<meta property="og:image" content="https://codybutryn.com/assets/sydetasker-cover.jpg">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="3" fill="%23FBFAF5"/><rect x="2" y="2" width="28" height="28" rx="2" fill="none" stroke="%231E3A5F" stroke-width="2"/><text x="16" y="21.5" font-family="Arial,sans-serif" font-size="13" font-weight="800" text-anchor="middle" fill="%23A63325">CB</text></svg>'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800;900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --desk:#E9E4D8;--paper:#FBFAF5;--paper-dim:#F4F1E7;--canary:#F6E9C0;
+    --carbon:#1E3A5F;--carbon-soft:#42597A;--rule:#C9D0DC;--rule-strong:#8FA0B8;
+    --ink:#23201B;--stamp:#A63325;
+    --print:'Libre Franklin',Arial,sans-serif;--type:'Courier Prime','Courier New',monospace;
+    --ease-out:cubic-bezier(0.23,1,0.32,1);
+  }
+  body{
+    background:var(--desk);
+    background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240"><filter id="g"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix values="0 0 0 0 0.55 0 0 0 0 0.52 0 0 0 0 0.45 0 0 0 0.05 0"/></filter><rect width="240" height="240" filter="url(%23g)"/></svg>');
+    color:var(--ink);font-family:var(--print);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:clip;
+  }
+  ::selection{background:var(--canary);color:var(--ink)}
+  :focus-visible{outline:2px solid var(--carbon);outline-offset:2px}
+  a{color:inherit}
+  .num{font-variant-numeric:tabular-nums}
+
+  /* folder-tab nav (shared) */
+  .tabs{position:sticky;top:0;z-index:20;background:var(--desk);padding:0.9rem 1rem 0;box-shadow:0 1px 0 rgba(35,32,27,0.08)}
+  .tabs-in{max-width:1060px;margin:0 auto;display:flex;align-items:flex-end;gap:6px}
+  .tab{font-family:var(--print);font-weight:700;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--carbon);background:var(--paper-dim);border:1px solid var(--rule-strong);border-bottom:none;border-radius:6px 6px 0 0;padding:0.62rem 1.15rem 0.7rem;text-decoration:none;position:relative;top:1px;transition:background-color 150ms var(--ease-out),transform 120ms var(--ease-out)}
+  .tab:active{transform:scale(0.97)}
+  .tab[aria-current="page"]{background:var(--paper);padding-bottom:0.85rem}
+  .tab-act{margin-left:auto;background:var(--carbon);color:var(--paper);border-color:var(--carbon)}
+  @media (hover:hover) and (pointer:fine){
+    .tab:hover{background:var(--paper)}
+    .tab-act:hover{background:#16304F}
+  }
+  @media (max-width:640px){
+    .tabs{padding-left:0;padding-right:0}
+    .tabs-in{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:0 1rem}
+    .tabs-in::-webkit-scrollbar{display:none}
+    .tab{padding:0.55rem 0.7rem 0.62rem;font-size:0.7rem;letter-spacing:0.05em;white-space:nowrap;flex:none}
+  }
+
+  .sheet{max-width:1060px;margin:0 auto 3.5rem;background:var(--paper);border:1px solid var(--rule-strong);box-shadow:0 2px 5px rgba(35,32,27,0.12),0 10px 22px rgba(35,32,27,0.14)}
+  .sheet-pad{padding:0 clamp(1.1rem,4vw,3rem)}
+
+  header.filehead{padding-top:clamp(1.6rem,4vw,2.4rem);padding-bottom:1.3rem;border-bottom:3px double var(--carbon)}
+  .fh-label{font-family:var(--type);font-size:0.8rem;color:var(--carbon-soft)}
+  h1{font-weight:900;font-size:clamp(1.7rem,4.6vw,2.7rem);letter-spacing:0.01em;line-height:1.05;color:var(--carbon);text-transform:uppercase;margin:0.4rem 0 0.7rem}
+  .fh-note{font-family:var(--type);font-size:0.92rem;line-height:1.7;color:#3E3A32;max-width:64ch}
+
+  /* drawer-tab filters */
+  .filters{display:flex;gap:6px;flex-wrap:wrap;padding:1.2rem 0 0;border-bottom:1.5px solid var(--carbon)}
+  .fbtn{font-family:var(--print);font-weight:700;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.55rem 1rem 0.62rem;border:1px solid var(--rule-strong);border-bottom:none;border-radius:6px 6px 0 0;background:var(--paper-dim);color:var(--carbon);cursor:pointer;transition:background-color 150ms var(--ease-out),transform 120ms var(--ease-out)}
+  .fbtn:active{transform:scale(0.97)}
+  @media (hover:hover) and (pointer:fine){.fbtn:hover{background:var(--canary)}}
+  .fbtn.on{background:var(--carbon);color:var(--paper);border-color:var(--carbon)}
+
+  /* filed sheets */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:1.8rem 0 2.6rem}
+  @media (max-width:920px){.grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.grid{grid-template-columns:1fr}}
+  .gcard{position:relative;display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--rule-strong);box-shadow:0 1px 3px rgba(35,32,27,0.09),0 8px 18px rgba(35,32,27,0.07);cursor:zoom-in;transition:transform 160ms var(--ease-out),box-shadow 160ms var(--ease-out)}
+  @media (hover:hover) and (pointer:fine){
+    .gcard:hover{transform:translateY(-3px);box-shadow:0 3px 6px rgba(35,32,27,0.10),0 16px 30px rgba(35,32,27,0.12)}
+  }
+  .gcard:active{transform:scale(0.99)}
+  .gcard.hidden{display:none}
+  .gimg{aspect-ratio:4/3;overflow:hidden;background:var(--paper-dim);border-bottom:1px solid var(--rule)}
+  .gimg img{width:100%;height:100%;object-fit:cover;display:block}
+  /* every filed sheet gets the same frame; artwork whose own lettering must
+     survive it letterboxes inside that frame rather than shortening the card */
+  .gimg.fit{display:grid;place-items:center;padding:0.5rem}
+  .gimg.fit img{width:100%;height:100%;object-fit:contain}
+  .gimg iframe{width:100%;height:100%;border:0;display:block}
+  .gmeta{padding:0.8rem 0.95rem 0.95rem}
+  .gmeta h3{font-weight:800;font-size:0.92rem;text-transform:uppercase;letter-spacing:0.02em;color:var(--ink)}
+  .gmeta .tag{font-family:var(--type);font-size:0.74rem;color:var(--carbon-soft);margin-top:0.3rem}
+  .badge{position:absolute;top:10px;left:10px;z-index:2;font-family:var(--print);font-weight:800;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;background:var(--carbon);color:var(--paper);padding:0.3rem 0.55rem;border-radius:3px}
+  .badge.sample{background:transparent;color:var(--stamp);border:2.5px solid var(--stamp);transform:rotate(-5deg);border-radius:4px}
+
+  /* open tray slots */
+  .gcard.slot{cursor:default;background:var(--paper-dim);border:1.5px dashed var(--rule-strong);box-shadow:none}
+  .gcard.slot:hover{transform:none;box-shadow:none;border-color:var(--carbon)}
+  .slot-in{aspect-ratio:4/3;display:grid;place-items:center;text-align:center;padding:1rem}
+  .slot-in p{font-family:var(--type);font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:#5C6B80;line-height:2}
+  .video-card{cursor:default}
+
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;background:rgba(30,40,55,0.93);display:none;place-items:center;z-index:100;padding:2rem;cursor:zoom-out}
+  .lightbox.open{display:grid}
+  .lightbox img{max-width:min(1000px,92vw);max-height:80vh;border:6px solid var(--paper);box-shadow:0 20px 60px rgba(0,0,0,0.4)}
+  .lb-cap{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);font-family:var(--type);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--paper)}
+
+  /* closing strip */
+  .accept{background:var(--carbon);color:var(--paper);margin:0 calc(clamp(1.1rem,4vw,3rem) * -1);padding:2.1rem clamp(1.8rem,5vw,3.6rem);display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap}
+  .accept p{font-family:var(--type);font-size:1rem}
+  .accept p b{color:var(--canary);font-weight:700}
+  .btn{display:inline-block;font-family:var(--print);font-weight:800;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.9rem 1.4rem;text-decoration:none;border:1.5px solid var(--paper);background:var(--paper);color:var(--carbon);transition:transform 120ms var(--ease-out),background-color 150ms var(--ease-out)}
+  .btn:active{transform:scale(0.97)}
+  @media (hover:hover) and (pointer:fine){.btn:hover{background:var(--canary)}}
+
+  .fine{max-width:1060px;margin:0 auto;padding:0 1rem 2.2rem;display:flex;justify-content:space-between;gap:0.6rem;flex-wrap:wrap;font-family:var(--type);font-size:0.72rem;color:#5C564B}
+
+  ::-webkit-scrollbar{width:12px}
+  ::-webkit-scrollbar-track{background:var(--desk)}
+  ::-webkit-scrollbar-thumb{background:var(--rule-strong);border:3px solid var(--desk);border-radius:7px}
+  ::-webkit-scrollbar-thumb:hover{background:var(--carbon)}
+</style>
+</head>
+<body>
+<!-- WORLD: The Estimate Packet (see index.html for the direction contract; seed 4cd2457a).
+     This surface: the flat file — concept work, filed and labeled. -->
+
+<nav class="tabs" aria-label="Site">
+  <div class="tabs-in">
+    <a class="tab" href="index.html">Estimate</a>
+    <a class="tab" href="index.html#work">Work orders</a>
+    <a class="tab" href="gallery.html" aria-current="page">Flat file</a>
+    <a class="tab" href="resume.html">Résumé</a>
+    <a class="tab tab-act" href="index.html#accept">Start a project</a>
+  </div>
+</nav>
+
+<main class="sheet">
+  <div class="sheet-pad">
+
+    <header class="filehead">
+      <h1>The flat file</h1>
+      <p class="fh-note">Drawer 2: mockups, brand concepts, ad creative, and video work.
+      Not everything here shipped — some of it is exploration — but all of it
+      shows how the work gets made. Sample sheets are stamped.</p>
+    </header>
+
+    <div class="filters" role="group" aria-label="Filter the file">
+      <button class="fbtn on" data-filter="all" aria-pressed="true">Everything</button>
+      <button class="fbtn" data-filter="web" aria-pressed="false">Web design</button>
+      <button class="fbtn" data-filter="branding" aria-pressed="false">Branding</button>
+      <button class="fbtn" data-filter="ads" aria-pressed="false">Ad creative</button>
+      <button class="fbtn" data-filter="video" aria-pressed="false">Video</button>
+    </div>
+
+    <!-- HOW TO ADD A PIECE: copy a block, change the image src, title, tag,
+         and data-cat (web | branding | ads | video). Delete the SAMPLE badge
+         line for real work. -->
+    <h2 style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap">Filed work</h2>
+    <div class="grid" id="grid">
+
+      <div class="gcard" data-cat="web" tabindex="0" role="button" aria-label="Enlarge: Trades website concept">
+        <span class="badge sample">Sample</span>
+        <div class="gimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3FpAuMKnsuSN8zmYdvHNBwuMKlA/hf_20260709_193817_6418c495-f95d-460f-8efc-6e253fe0f64c.png" alt="Website design mockup for a trades business" loading="lazy"></div>
+        <div class="gmeta"><h3>Trades Website Concept</h3><p class="tag">Web design · concept</p></div>
+      </div>
+
+      <div class="gcard" data-cat="branding" tabindex="0" role="button" aria-label="Enlarge: Local business identity board">
+        <span class="badge sample">Sample</span>
+        <div class="gimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3FpAuMKnsuSN8zmYdvHNBwuMKlA/hf_20260709_193825_0a073347-367e-442a-be8d-f24a122eaa1c.png" alt="Brand identity board for a local business" loading="lazy"></div>
+        <div class="gmeta"><h3>Local Business Identity Board</h3><p class="tag">Branding · concept</p></div>
+      </div>
+
+      <div class="gcard" data-cat="ads" tabindex="0" role="button" aria-label="Enlarge: Meal kit social ad set">
+        <span class="badge sample">Sample</span>
+        <div class="gimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3FpAuMKnsuSN8zmYdvHNBwuMKlA/hf_20260709_193833_1b6cc795-b46d-43ae-ba3c-680369201c2a.png" alt="Social ad creative set for a meal kit brand" loading="lazy"></div>
+        <div class="gmeta"><h3>Meal Kit Social Ad Set</h3><p class="tag">Ad creative · concept</p></div>
+      </div>
+
+      <div class="gcard" data-cat="branding" tabindex="0" role="button" aria-label="Enlarge: Miltown Eats brand imagery">
+        <span class="badge">Miltown Eats</span>
+        <div class="gimg"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3FpAuMKnsuSN8zmYdvHNBwuMKlA/hf_20260709_081349_6c4a4b39-b67b-4994-82e8-ff857782cfce.png" alt="Miltown Eats brand imagery" loading="lazy"></div>
+        <div class="gmeta"><h3>Miltown Eats Brand Imagery</h3><p class="tag">Branding · food · JOB № 001</p></div>
+      </div>
+
+      <div class="gcard video-card" data-cat="video">
+        <div class="gimg" style="background:#1E3A5F">
+          <iframe src="https://www.youtube.com/embed/VFZFD0jMDMI" title="Video work by Cody Butryn" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="gmeta"><h3>Promo &amp; Video Production</h3><p class="tag">Video · shot, edited &amp; produced</p></div>
+      </div>
+
+      <div class="gcard" data-cat="ads" tabindex="0" role="button" aria-label="Enlarge: SydeTasker launch cover">
+        <span class="badge">Sydetasker</span>
+        <div class="gimg fit"><img src="assets/sydetasker-cover.jpg" alt="SydeTasker promotional cover graphic" loading="lazy"></div>
+        <div class="gmeta"><h3>Sydetasker Launch Cover</h3><p class="tag">Ad creative · brand campaign · JOB № 002</p></div>
+      </div>
+
+      <!-- To file a new piece: copy a .gcard block above, set the image src,
+           title, tag, and data-cat (web | branding | ads | video). Drop the
+           SAMPLE badge line for real work. -->
+
+    </div>
+
+    <section class="accept" aria-label="Start a project">
+      <p>Like what's in the file? <b>Let's spec your project.</b></p>
+      <a class="btn" href="index.html#accept">Start a project</a>
+    </section>
+
+  </div>
+</main>
+
+<footer class="fine">
+  <span class="num">FORM CB-102 · © 2026 CODY BUTRYN</span>
+  <span>Milwaukee, WI — built by hand</span>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image">
+  <img id="lb-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+  <p class="lb-cap" id="lb-cap"></p>
+</div>
+
+<script>
+  // Filtering
+  document.querySelectorAll('.fbtn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.fbtn').forEach(function(b){
+        b.classList.remove('on'); b.setAttribute('aria-pressed','false');
+      });
+      btn.classList.add('on'); btn.setAttribute('aria-pressed','true');
+      var f = btn.dataset.filter;
+      document.querySelectorAll('.gcard').forEach(function(card){
+        card.classList.toggle('hidden', f !== 'all' && card.dataset.cat !== f);
+      });
+    });
+  });
+  // Lightbox
+  var lb = document.getElementById('lightbox');
+  function openCard(card){
+    var img = card.querySelector('img');
+    var full = document.getElementById('lb-img');
+    full.src = img.src; full.alt = img.alt;
+    document.getElementById('lb-cap').textContent = card.querySelector('h3').textContent;
+    lb.classList.add('open');
+  }
+  document.querySelectorAll('.gcard:not(.slot):not(.video-card)').forEach(function(card){
+    card.addEventListener('click', function(){ openCard(card); });
+    card.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openCard(card); }
+    });
+  });
+  lb.addEventListener('click', function(){ lb.classList.remove('open'); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') lb.classList.remove('open'); });
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# Normalize text to LF in the repository; check out native on Windows.
+* text=auto
+
+*.html text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+_headers text eol=lf
+
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.pdf binary

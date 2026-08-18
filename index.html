@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<!-- impeccable-disable cream-palette: the desk ground of the estimate-packet world, chosen at the direction round -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cody Butryn — Web Design That Pays for Itself · Milwaukee, WI</title>
+<meta name="description" content="Web designer with a marketer's scoreboard. Sites for builders, plumbers, telecom, and marketplaces — measured in revenue, leads, and orders. Milwaukee, WI. Taking new projects.">
+<link rel="canonical" href="https://codybutryn.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://codybutryn.com/">
+<meta property="og:title" content="Cody Butryn — Web Design That Pays for Itself">
+<meta property="og:description" content="Every project spec'd like a job and measured in revenue, leads, and orders. $500K sales generated, 400+ weekly orders scaled from zero. Milwaukee, WI.">
+<meta property="og:image" content="https://codybutryn.com/assets/sydetasker-cover.jpg">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="3" fill="%23FBFAF5"/><rect x="2" y="2" width="28" height="28" rx="2" fill="none" stroke="%231E3A5F" stroke-width="2"/><text x="16" y="21.5" font-family="Arial,sans-serif" font-size="13" font-weight="800" text-anchor="middle" fill="%23A63325">CB</text></svg>'>
+<script>document.documentElement.className="js"</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800;900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --desk:#E9E4D8;          /* the counter the paperwork sits on */
+    --paper:#FBFAF5;         /* the form sheet */
+    --paper-dim:#F4F1E7;     /* shaded paper regions */
+    --canary:#F6E9C0;        /* duplicate copy */
+    --pink:#F5DCD6;          /* file copy */
+    --carbon:#1E3A5F;        /* printed form ink */
+    --carbon-soft:#42597A;   /* secondary printed text (AA on paper) */
+    --rule:#C9D0DC;          /* hairline form rules */
+    --rule-strong:#8FA0B8;   /* heavier rules */
+    --ink:#23201B;           /* typed entries */
+    --stamp:#A63325;         /* the one stamp ink */
+    --print:'Libre Franklin',Arial,sans-serif;
+    --type:'Courier Prime','Courier New',monospace;
+    --ease-out:cubic-bezier(0.23,1,0.32,1);
+  }
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    background:var(--desk);
+    background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240"><filter id="g"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/><feColorMatrix values="0 0 0 0 0.55 0 0 0 0 0.52 0 0 0 0 0.45 0 0 0 0.05 0"/></filter><rect width="240" height="240" filter="url(%23g)"/></svg>');
+    color:var(--ink);font-family:var(--print);line-height:1.5;
+    -webkit-font-smoothing:antialiased;overflow-x:clip;
+  }
+  ::selection{background:var(--canary);color:var(--ink)}
+  :focus-visible{outline:2px solid var(--carbon);outline-offset:2px}
+  a{color:inherit}
+  .num{font-variant-numeric:tabular-nums}
+
+  /* ── FOLDER-TAB NAV ── */
+  .tabs{position:sticky;top:0;z-index:20;background:var(--desk);padding:0.9rem 1rem 0;box-shadow:0 1px 0 rgba(35,32,27,0.08)}
+  .tabs-in{max-width:1060px;margin:0 auto;display:flex;align-items:flex-end;gap:6px}
+  .tab{
+    font-family:var(--print);font-weight:700;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--carbon);background:var(--paper-dim);border:1px solid var(--rule-strong);border-bottom:none;
+    border-radius:6px 6px 0 0;padding:0.62rem 1.15rem 0.7rem;text-decoration:none;position:relative;top:1px;
+    transition:background-color 150ms var(--ease-out),transform 120ms var(--ease-out);
+  }
+  .tab:active{transform:scale(0.97)}
+  .tab[aria-current="page"]{background:var(--paper);padding-bottom:0.85rem}
+  .tab-act{margin-left:auto;background:var(--carbon);color:var(--paper);border-color:var(--carbon)}
+  @media (hover:hover) and (pointer:fine){
+    .tab:hover{background:var(--paper)}
+    .tab-act:hover{background:#16304F;color:var(--paper)}
+  }
+  @media (max-width:640px){
+    .tabs{padding-left:0;padding-right:0}
+    .tabs-in{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:0 1rem}
+    .tabs-in::-webkit-scrollbar{display:none}
+    .tab{padding:0.55rem 0.7rem 0.62rem;font-size:0.7rem;letter-spacing:0.05em;white-space:nowrap;flex:none}
+    .tab-name{display:none}
+  }
+
+  /* ── THE SHEET ── */
+  .sheet{
+    max-width:1060px;margin:0 auto 3.5rem;background:var(--paper);
+    border:1.5px solid var(--rule-strong);
+    box-shadow:0 2px 5px rgba(35,32,27,0.12),0 10px 22px rgba(35,32,27,0.14);
+  }
+  .sheet-pad{padding:0 clamp(1.1rem,4vw,3rem)}
+
+  /* letterhead */
+  .letterhead{display:flex;justify-content:space-between;gap:1.5rem;align-items:flex-start;padding-top:clamp(1.6rem,4vw,2.6rem);padding-bottom:1.4rem;border-bottom:3px double var(--carbon)}
+  .lh-name{font-weight:900;font-size:clamp(1.6rem,4.4vw,2.6rem);letter-spacing:0.015em;line-height:1;color:var(--carbon);text-transform:uppercase}
+  .lh-trade{font-weight:600;font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--carbon-soft);margin-top:0.55rem}
+  .lh-contact{font-family:var(--type);font-size:0.78rem;color:var(--ink);margin-top:0.8rem;line-height:1.9}
+  .lh-contact a{text-decoration-color:var(--rule-strong);text-underline-offset:3px}
+  .lh-boxes{display:grid;gap:8px;flex:none}
+  .lh-box{border:1.5px solid var(--carbon);min-width:172px}
+  .lh-box dt{font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--paper);background:var(--carbon);padding:0.3rem 0.55rem}
+  .lh-box dd{font-family:var(--type);font-weight:700;font-size:1.02rem;padding:0.5rem 0.55rem;color:var(--ink)}
+  .lh-box .no{color:var(--stamp)}
+  @media (max-width:720px){.letterhead{flex-direction:column}.lh-boxes{grid-template-columns:1fr 1fr;width:100%}}
+
+  /* the estimate form */
+  .job{position:relative;padding-top:1.9rem}
+  .job-for{font-family:var(--type);font-size:0.9rem;color:var(--carbon-soft)}
+  .job-for b{color:var(--ink);font-weight:700}
+  .job-for a{color:var(--stamp);font-weight:700;text-decoration-color:var(--rule-strong);text-underline-offset:3px}
+  h1{
+    font-family:var(--type);font-weight:700;font-size:clamp(1.5rem,4vw,2.35rem);
+    line-height:1.22;letter-spacing:-0.01em;color:var(--ink);max-width:24ch;
+    margin:0.85rem 0 0.4rem;
+  }
+  h1 .mark{background:linear-gradient(transparent 62%,var(--canary) 62%)}
+  .job-sub{font-size:1rem;line-height:1.65;color:var(--carbon-soft);max-width:62ch;margin:0.8rem 0 1.8rem}
+  .job-sub b{color:var(--ink);font-weight:700}
+
+  .lines{width:100%;border-collapse:collapse;margin-bottom:0}
+  .lines caption{text-align:left;font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--carbon);border-bottom:1.5px solid var(--carbon);padding-bottom:0.4rem;margin-bottom:0}
+  .lines th{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--carbon-soft);text-align:left;padding:0.55rem 0.6rem 0.45rem;border-bottom:1px solid var(--rule)}
+  .lines td{font-family:var(--type);font-size:0.88rem;padding:0.72rem 0.6rem;border-bottom:1px solid var(--rule);vertical-align:top}
+  .lines .it{width:34%;font-weight:700;color:var(--carbon)}
+  .lines .ref{width:17%;white-space:nowrap;color:var(--carbon-soft)}
+  .lines .ref a{color:var(--stamp);font-weight:700;text-decoration-color:var(--rule-strong);text-underline-offset:3px}
+  @media (max-width:640px){
+    .lines thead{display:none}
+    .lines,.lines tbody,.lines tr,.lines td{display:block;width:100%}
+    .lines td{border-bottom:none;padding:0.15rem 0}
+    .lines tr{border-bottom:1px solid var(--rule);padding:0.7rem 0}
+    .lines .it,.lines .ref{width:100%}
+  }
+
+  /* prior totals row */
+  .totals{display:grid;grid-template-columns:repeat(4,1fr);border:1.5px solid var(--carbon);margin:1.6rem 0 1.9rem;background:var(--paper-dim)}
+  .totals>a{display:block;padding:0.85rem 0.9rem;border-right:1px solid var(--rule-strong);text-decoration:none;transition:background-color 150ms var(--ease-out)}
+  .totals>a:last-child{border-right:none}
+  @media (hover:hover) and (pointer:fine){.totals>a:hover{background:var(--canary)}}
+  .totals>a:active{transform:scale(0.99)}
+  .totals b{display:block;font-family:var(--type);font-weight:700;font-size:clamp(1.15rem,2.6vw,1.55rem);color:var(--ink);letter-spacing:-0.01em}
+  .totals small{display:block;font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--carbon-soft);margin-top:0.3rem;line-height:1.5}
+  .totals .jn{color:var(--stamp);font-weight:700}
+  @media (max-width:720px){.totals{grid-template-columns:1fr 1fr}.totals>a:nth-child(2){border-right:none}.totals>a:nth-child(-n+2){border-bottom:1px solid var(--rule-strong)}}
+
+  /* stamps */
+  .stamp{
+    display:inline-block;font-weight:800;text-transform:uppercase;color:var(--stamp);
+    border:3px solid var(--stamp);border-radius:5px;padding:0.32em 0.6em;
+    letter-spacing:0.12em;transform:rotate(-6deg);
+    mask-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="140" height="60"><filter id="r"><feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.92 0"/><feComposite operator="over" in2="SourceGraphic"/></filter><rect width="140" height="60" fill="white" filter="url(%23r)"/></svg>');
+    mask-size:cover;
+  }
+  .stamp-avail{position:absolute;top:0.4rem;right:0;font-size:clamp(0.72rem,1.6vw,0.95rem);rotate:none}
+  .stamp-paid{font-size:0.78rem;transform:rotate(-8deg)}
+  .js .stamped{opacity:0;transform:rotate(-6deg) scale(1.25)}
+  .js .stamped.in{opacity:1;transform:rotate(-6deg) scale(1);transition:opacity 220ms var(--ease-out),transform 220ms var(--ease-out)}
+  .js .stamp-paid.stamped{transform:rotate(-8deg) scale(1.25)}
+  .js .stamp-paid.stamped.in{transform:rotate(-8deg) scale(1)}
+  @media (prefers-reduced-motion:reduce){
+    .js .stamped{transform:rotate(-6deg) scale(1)}
+    .js .stamp-paid.stamped{transform:rotate(-8deg) scale(1)}
+    .js .stamped.in{transition:opacity 180ms ease}
+  }
+
+  /* acceptance row (hero CTA) */
+  .accept-row{display:flex;align-items:flex-end;gap:1.6rem;flex-wrap:wrap;padding:1.5rem 0 2.2rem}
+  .sig{flex:1;min-width:220px}
+  .sig .line{border-bottom:1.5px solid var(--ink);height:2.1rem;position:relative}
+  .sig .line svg{position:absolute;left:6px;bottom:-4px;height:2.4rem;width:auto;color:var(--carbon)}
+  .sig small{display:block;font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--carbon-soft);margin-top:0.4rem}
+  .btn{
+    display:inline-block;font-family:var(--print);font-weight:800;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;
+    padding:0.95rem 1.5rem;text-decoration:none;border:1.5px solid var(--carbon);
+    transition:transform 120ms var(--ease-out),background-color 150ms var(--ease-out),color 150ms var(--ease-out);
+  }
+  .btn:active{transform:scale(0.97)}
+  .btn-fill{background:var(--carbon);color:var(--paper)}
+  .btn-line{background:transparent;color:var(--carbon)}
+  @media (hover:hover) and (pointer:fine){
+    .btn-fill:hover{background:#16304F}
+    .btn-line:hover{background:var(--paper-dim)}
+  }
+
+  /* ── SECTION HEADERS (printed bars) ── */
+  h2{
+    font-weight:800;font-size:clamp(1.05rem,2.6vw,1.45rem);letter-spacing:0.09em;text-transform:uppercase;color:var(--carbon);
+    border-top:3px double var(--carbon);border-bottom:1px solid var(--rule-strong);
+    padding:0.85rem 0;margin:0 0 1.6rem;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;
+  }
+  h2 .h2-note{font-family:var(--type);font-weight:400;font-size:0.78rem;letter-spacing:0;text-transform:none;color:var(--carbon-soft)}
+  section{padding:2.6rem 0 2.2rem}
+
+  /* ── WORK ORDERS ── */
+  .orders{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .order{
+    position:relative;background:var(--paper);border:1px solid var(--rule-strong);
+    box-shadow:0 1px 3px rgba(35,32,27,0.09),0 8px 20px rgba(35,32,27,0.07);
+    padding:1.15rem 1.25rem 1.25rem;
+    transition:transform 160ms var(--ease-out),box-shadow 160ms var(--ease-out);
+  }
+  .order.flag{grid-column:1/-1;display:grid;grid-template-columns:1.25fr 1fr;gap:1.5rem}
+  @media (hover:hover) and (pointer:fine){
+    .order:hover{transform:translateY(-3px);box-shadow:0 3px 6px rgba(35,32,27,0.10),0 16px 34px rgba(35,32,27,0.12)}
+  }
+  @media (max-width:820px){.orders{grid-template-columns:1fr}.order.flag{grid-template-columns:1fr}}
+  .o-head{display:flex;align-items:baseline;gap:0.7rem;flex-wrap:wrap;border-bottom:1.5px solid var(--carbon);padding-bottom:0.6rem;margin-bottom:0.8rem}
+  .o-no{font-family:var(--type);font-weight:700;font-size:0.8rem;color:var(--stamp);white-space:nowrap}
+  .o-head h3{font-weight:800;font-size:1.12rem;letter-spacing:0.02em;text-transform:uppercase;color:var(--ink)}
+  .o-site{margin-left:auto;font-family:var(--type);font-size:0.78rem;color:var(--carbon);text-decoration-color:var(--rule-strong);text-underline-offset:3px;white-space:nowrap;display:inline-flex;align-items:center;gap:0.35em}
+  .o-site svg{width:0.72em;height:0.72em;flex:none}
+  @media (hover:hover) and (pointer:fine){.o-site:hover{color:var(--stamp)}}
+  .o-role{font-family:var(--type);font-size:0.82rem;color:var(--carbon-soft);margin-bottom:0.75rem}
+  .o-scope{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--carbon-soft)}
+  .o-scope-v{font-family:var(--type);font-size:0.85rem;line-height:1.7;margin:0.3rem 0 0.9rem}
+  .o-result{display:flex;align-items:center;gap:0.9rem;border:1.5px solid var(--carbon);background:var(--paper-dim);padding:0.6rem 0.8rem}
+  .o-result dt{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--carbon-soft);flex:none}
+  .o-result dd{font-family:var(--type);font-weight:700;font-size:0.95rem;color:var(--ink)}
+  .o-result .stamp-paid{margin-left:auto;flex:none}
+  .o-shot{position:relative;margin:0.35rem 0 0.95rem}
+  .order.flag .o-shot{margin:0}
+  .o-shot img{display:block;width:100%;height:auto;border:1px solid var(--rule-strong);transform:rotate(0.7deg);box-shadow:0 2px 5px rgba(35,32,27,0.14),0 10px 22px rgba(35,32,27,0.10)}
+  .o-shot .clip{position:absolute;top:-11px;left:1.1rem;width:22px;height:44px;color:var(--rule-strong)}
+
+  /* ── PROCESS: the triplicate set ── */
+  .copies{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+  @media (max-width:820px){.copies{grid-template-columns:1fr}}
+  .copy{border:1px solid var(--rule-strong);padding:1.25rem 1.3rem 1.4rem;box-shadow:0 1px 3px rgba(35,32,27,0.09),0 8px 18px rgba(35,32,27,0.07);position:relative}
+  .copy:nth-child(1){background:var(--paper);transform:rotate(-0.4deg)}
+  .copy:nth-child(2){background:var(--canary);transform:rotate(0.35deg)}
+  .copy:nth-child(3){background:var(--pink);transform:rotate(-0.3deg)}
+  .copy-edge{font-family:var(--type);font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--carbon-soft);border-bottom:1px dashed var(--rule-strong);padding-bottom:0.5rem;margin-bottom:0.85rem}
+  .copy h3{font-weight:800;font-size:1.02rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--carbon);margin-bottom:0.5rem}
+  .copy p{font-size:0.88rem;line-height:1.65;color:#3E3A32}
+  .copy p b{color:var(--ink)}
+
+  /* ── ACCEPTANCE ── */
+  .accept{background:var(--carbon);color:var(--paper);margin:0 calc(clamp(1.1rem,4vw,3rem) * -1);padding:2.6rem clamp(1.8rem,5vw,3.6rem) 2.8rem}
+  .accept h2{color:var(--paper);border-top-color:var(--paper);border-bottom-color:rgba(251,250,245,0.35);margin-bottom:1.2rem}
+  .accept .lede{font-family:var(--type);font-size:clamp(1.02rem,2.4vw,1.3rem);line-height:1.55;max-width:52ch;margin-bottom:1.7rem}
+  .accept .lede b{color:var(--canary);font-weight:700}
+  .accept-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:2rem;align-items:end}
+  @media (max-width:720px){.accept-grid{grid-template-columns:1fr}}
+  .accept .sig .line{border-bottom-color:var(--paper)}
+  .accept .sig small{color:#B7C4D6}
+  .accept .btn{border-color:var(--paper)}
+  .accept .btn-fill{background:var(--paper);color:var(--carbon)}
+  .accept .btn-line{color:var(--paper)}
+  @media (hover:hover) and (pointer:fine){
+    .accept .btn-fill:hover{background:var(--canary)}
+    .accept .btn-line:hover{background:rgba(251,250,245,0.12)}
+  }
+  .accept .ways{font-family:var(--type);font-size:0.85rem;line-height:2.15}
+  .accept .ways a{text-decoration-color:rgba(251,250,245,0.4);text-underline-offset:3px}
+  @media (hover:hover) and (pointer:fine){.accept .ways a:hover{color:var(--canary)}}
+  .accept .ways .k{color:#B7C4D6;letter-spacing:0.1em;text-transform:uppercase;font-size:0.72rem;font-family:var(--print);font-weight:700}
+  .accept .btns{display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:1.2rem}
+
+  /* fine print */
+  .fine{max-width:1060px;margin:0 auto;padding:0 1rem 2.2rem;display:flex;justify-content:space-between;gap:0.6rem;flex-wrap:wrap;font-family:var(--type);font-size:0.72rem;color:#5C564B}
+
+  /* ── MOBILE OVERRIDES (declared last so they win) ── */
+  @media (max-width:640px){
+    /* the stamp stops overprinting the prepared-for line */
+    .stamp-avail{position:static;display:inline-block;margin:0 0 1.1rem;font-size:0.86rem}
+    .job{padding-top:1.2rem}
+    /* the table caption keeps its own line and full rule */
+    .lines caption{display:block;width:100%}
+  }
+
+  /* custom scrollbar — the desk's own */
+  ::-webkit-scrollbar{width:12px}
+  ::-webkit-scrollbar-track{background:var(--desk)}
+  ::-webkit-scrollbar-thumb{background:var(--rule-strong);border:3px solid var(--desk);border-radius:7px}
+  ::-webkit-scrollbar-thumb:hover{background:var(--carbon)}
+</style>
+</head>
+<body>
+<!--
+THESIS: The portfolio as a signed contractor's estimate — proof reads as line items
+and stamped totals; refuses the designer-portfolio hero/case-study scroll.
+OWN-WORLD: Carbonless form set on a counter. Paper #FBFAF5 on desk #E9E4D8; carbon-blue
+#1E3A5F printed rules and Franklin caps labels; Courier Prime typed fill-ins in ink
+#23201B; canary duplicate #F6E9C0; one red stamp ink #A63325 carrying every state.
+STORY: A trade owner recognizes the paper they sign weekly, reads five PAID work
+orders with real totals, believes the scoreboard, and signs — email or call.
+FIRST VIEWPORT: Folder tabs over a letterhead (name left, ESTIMATE № boxes right);
+typed h1 job line, three printed line items with JOB № refs, prior-totals strip
+($500K · 400+ orders · 138 leads · +50%), TAKING NEW PROJECTS stamp, acceptance
+row with signature line and primary mailto button.
+FORM: The Estimate Packet — candidate 1 of 7 (model pick; roll assigned 6; user
+locked the pick). Seed 4cd2457a. Code-led: image credits were 0.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish
+review, the verdict, DESIGN.md, and every shipping raster carrying its provenance.
+-->
+
+<nav class="tabs" aria-label="Site">
+  <div class="tabs-in">
+    <a class="tab" href="index.html" aria-current="page">Estimate<span class="tab-name"> — Cody Butryn</span></a>
+    <a class="tab" href="index.html#work">Work orders</a>
+    <a class="tab" href="gallery.html">Flat file</a>
+    <a class="tab" href="resume.html">Résumé</a>
+    <a class="tab tab-act" href="#accept">Start a project</a>
+  </div>
+</nav>
+
+<main class="sheet">
+  <div class="sheet-pad">
+
+    <!-- LETTERHEAD -->
+    <header class="letterhead">
+      <div>
+        <p class="lh-name">Cody Butryn</p>
+        <p class="lh-trade">Web Design &amp; Growth · Milwaukee, Wis.</p>
+        <p class="lh-contact">
+          <a href="tel:+12628939776" class="num">(262) 893-9776</a> ·
+          <a href="mailto:hello@codybutryn.com">hello@codybutryn.com</a>
+        </p>
+      </div>
+      <dl class="lh-boxes">
+        <div class="lh-box"><dt>Estimate №</dt><dd class="no num">0001</dd></div>
+        <div class="lh-box"><dt>Date</dt><dd class="num">AUG 2026</dd></div>
+      </dl>
+    </header>
+
+    <!-- THE JOB -->
+    <section class="job" aria-label="The estimate">
+      <span class="stamp stamp-avail stamped">Taking new projects</span>
+      <p class="job-for">PREPARED FOR: <b>your business</b> · OPENS AS <a href="#job-next" class="num">JOB № 006</a></p>
+      <h1>A website that <span class="mark">produces</span>: leads, orders, booked calls.</h1>
+      <p class="job-sub">
+        I'm a web designer with a marketer's scoreboard. Eight-plus years across
+        business development, content, and sales — plus <b>Miltown Eats</b>, my own
+        meal-kit company scaled from zero with my own money on the line. Every job
+        below is measured in <b>revenue, leads, and orders</b>, not pixels.
+      </p>
+
+      <table class="lines">
+        <caption>Scope of work</caption>
+        <thead>
+          <tr><th scope="col">Line item</th><th scope="col">Description</th><th scope="col">Ref</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="it">Find the money page</td>
+            <td>Before design starts: the searches, the audiences, and the one action a visitor must take.</td>
+            <td class="ref"><a href="#job-005" class="num">JOB № 005</a></td>
+          </tr>
+          <tr>
+            <td class="it">Design for the decision</td>
+            <td>Fast pages with clear hierarchy, built to rank and persuade — corporate-grade, conversion-first.</td>
+            <td class="ref"><a href="#job-001" class="num">JOB № 001</a></td>
+          </tr>
+          <tr>
+            <td class="it">Prove it in numbers</td>
+            <td>Analytics, Search Console, and CRM tie-ins from day one, so the site can point at the dollars it produced.</td>
+            <td class="ref"><a href="#job-002" class="num">JOB № 002</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <nav class="totals num" aria-label="Prior job totals on file">
+        <a href="#job-005"><b>$500K</b><small><span class="jn">№ 005</span> · sales generated, 2021</small></a>
+        <a href="#job-001"><b>400+</b><small><span class="jn">№ 001</span> · weekly orders from zero</small></a>
+        <a href="#job-005"><b>138</b><small><span class="jn">№ 005</span> · qualified leads delivered</small></a>
+        <a href="#job-002"><b>+50%</b><small><span class="jn">№ 002</span> · job posters in six weeks</small></a>
+      </nav>
+
+      <div class="accept-row">
+        <div class="sig">
+          <div class="line" aria-hidden="true">
+            <svg viewBox="0 0 120 40" fill="none" aria-hidden="true"><path d="M4 32 C 18 8, 26 6, 30 20 C 33 30, 40 30, 46 18 C 51 8, 57 10, 60 22 C 63 32, 72 30, 80 20 L 116 20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <small>Accepted by — takes about one email</small>
+        </div>
+        <a class="btn btn-fill" href="mailto:hello@codybutryn.com?subject=Project%20estimate">Start a project</a>
+        <a class="btn btn-line num" href="tel:+12628939776">(262) 893-9776</a>
+      </div>
+    </section>
+
+    <!-- WORK ORDERS -->
+    <section id="work" aria-label="Completed work orders">
+      <h2>Completed work orders <span class="h2-note">totals on file: no numbers, no page</span></h2>
+      <div class="orders">
+
+        <article class="order flag" id="job-001">
+          <div>
+            <div class="o-head">
+              <span class="o-no num">JOB № 001</span>
+              <h3>Miltown Eats</h3>
+              <a class="o-site" href="https://miltowneats.com" target="_blank" rel="noopener">miltowneats.com<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M4.6 3.5 H8.5 V7.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg></a>
+            </div>
+            <p class="o-role">Founder, my own money on the line · 2022–present</p>
+            <p class="o-scope">Scope</p>
+            <p class="o-scope-v">Brand, site, loyalty program, and a multi-vendor local marketplace — built from zero and run with a team of 15.</p>
+            <dl class="o-result">
+              <dt>Result</dt>
+              <dd>0 → 400+ weekly orders in year one</dd>
+              <span class="stamp stamp-paid stamped">Paid</span>
+            </dl>
+          </div>
+          <div class="o-shot">
+            <svg class="clip" viewBox="0 0 22 44" fill="none" aria-hidden="true"><path d="M11 3 C 6 3, 4 7, 4 11 L 4 33 C 4 38, 8 41, 11 41 C 14 41, 18 38, 18 33 L 18 13 C 18 10, 16 8, 14 8 C 12 8, 10 10, 10 13 L 10 31" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <img src="assets/miltowneats-card.jpg" alt="Miltown Eats website, filed with this work order" loading="eager" width="640" height="420">
+          </div>
+        </article>
+
+        <article class="order" id="job-002">
+          <div class="o-head">
+            <span class="o-no num">JOB № 002</span>
+            <h3>SydeTasker</h3>
+            <a class="o-site" href="https://sydetasker.com" target="_blank" rel="noopener">sydetasker.com<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M4.6 3.5 H8.5 V7.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg></a>
+          </div>
+          <p class="o-role">Gig marketplace · head of marketing operations</p>
+          <div class="o-shot">
+            <svg class="clip" viewBox="0 0 22 44" fill="none" aria-hidden="true"><path d="M11 3 C 6 3, 4 7, 4 11 L 4 33 C 4 38, 8 41, 11 41 C 14 41, 18 38, 18 33 L 18 13 C 18 10, 16 8, 14 8 C 12 8, 10 10, 10 13 L 10 31" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <img src="assets/sydetasker-card.jpg" alt="SydeTasker website, filed with this work order" loading="lazy" width="640" height="420">
+          </div>
+          <p class="o-scope">Scope</p>
+          <p class="o-scope-v">Sydework → SydeTasker rebrand, paid campaigns, and a dual-sided loyalty program for contractors and posters.</p>
+          <dl class="o-result">
+            <dt>Result</dt>
+            <dd>+50% job posters in six weeks</dd>
+            <span class="stamp stamp-paid stamped">Paid</span>
+          </dl>
+        </article>
+
+        <article class="order" id="job-003">
+          <div class="o-head">
+            <span class="o-no num">JOB № 003</span>
+            <h3>Butryn Builders</h3>
+            <a class="o-site" href="https://butrynbuilders.com" target="_blank" rel="noopener">butrynbuilders.com<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M4.6 3.5 H8.5 V7.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg></a>
+          </div>
+          <p class="o-role">Construction · brand site</p>
+          <div class="o-shot">
+            <svg class="clip" viewBox="0 0 22 44" fill="none" aria-hidden="true"><path d="M11 3 C 6 3, 4 7, 4 11 L 4 33 C 4 38, 8 41, 11 41 C 14 41, 18 38, 18 33 L 18 13 C 18 10, 16 8, 14 8 C 12 8, 10 10, 10 13 L 10 31" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <img src="assets/butrynbuilders-card.jpg" alt="Butryn Builders website, filed with this work order" loading="lazy" width="640" height="420">
+          </div>
+          <p class="o-scope">Scope</p>
+          <p class="o-scope-v">Brand site, project galleries, local SEO, and lead capture for a family construction outfit.</p>
+          <dl class="o-result">
+            <dt>Result</dt>
+            <dd>Inbound project leads from local search</dd>
+            <span class="stamp stamp-paid stamped">Paid</span>
+          </dl>
+        </article>
+
+        <article class="order" id="job-004">
+          <div class="o-head">
+            <span class="o-no num">JOB № 004</span>
+            <h3>CZ Plumbing</h3>
+            <a class="o-site" href="https://cz-plumbing.com" target="_blank" rel="noopener">cz-plumbing.com<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M4.6 3.5 H8.5 V7.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg></a>
+          </div>
+          <p class="o-role">Trade services · call-first site</p>
+          <div class="o-shot">
+            <svg class="clip" viewBox="0 0 22 44" fill="none" aria-hidden="true"><path d="M11 3 C 6 3, 4 7, 4 11 L 4 33 C 4 38, 8 41, 11 41 C 14 41, 18 38, 18 33 L 18 13 C 18 10, 16 8, 14 8 C 12 8, 10 10, 10 13 L 10 31" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <img src="assets/czplumbing-card.jpg" alt="CZ Plumbing website, filed with this work order" loading="lazy" width="640" height="420">
+          </div>
+          <p class="o-scope">Scope</p>
+          <p class="o-scope-v">Service site with call-first mobile UX and Google Business integration.</p>
+          <dl class="o-result">
+            <dt>Result</dt>
+            <dd>Booked calls straight from mobile search</dd>
+            <span class="stamp stamp-paid stamped">Paid</span>
+          </dl>
+        </article>
+
+        <article class="order" id="job-005">
+          <div class="o-head">
+            <span class="o-no num">JOB № 005</span>
+            <h3>IP Phone Warehouse</h3>
+            <a class="o-site" href="https://ipphone-warehouse.com" target="_blank" rel="noopener">ipphone-warehouse.com<svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3.5 8.5 L8.5 3.5 M4.6 3.5 H8.5 V7.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></svg></a>
+          </div>
+          <p class="o-role">B2B ecommerce · content &amp; SEO, at TriTech eMarket Ventures</p>
+          <div class="o-shot">
+            <svg class="clip" viewBox="0 0 22 44" fill="none" aria-hidden="true"><path d="M11 3 C 6 3, 4 7, 4 11 L 4 33 C 4 38, 8 41, 11 41 C 14 41, 18 38, 18 33 L 18 13 C 18 10, 16 8, 14 8 C 12 8, 10 10, 10 13 L 10 31" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <img src="assets/ipphone-card.jpg" alt="IP Phone Warehouse website, filed with this work order" loading="lazy" width="640" height="420">
+          </div>
+          <p class="o-scope">Scope</p>
+          <p class="o-scope-v">Content system, SEO framework, and product &amp; video marketing for a national reseller.</p>
+          <dl class="o-result">
+            <dt>Result</dt>
+            <dd>$500K sales · 138 qualified leads (2021)</dd>
+            <span class="stamp stamp-paid stamped">Paid</span>
+          </dl>
+        </article>
+
+        <article class="order" id="job-next" aria-label="Open work order">
+          <div class="o-head">
+            <span class="o-no num">JOB № 006</span>
+            <h3>Your business</h3>
+          </div>
+          <p class="o-role">This work order is open.</p>
+          <p class="o-scope">Scope</p>
+          <p class="o-scope-v">Whatever your site needs to produce — leads, orders, calls. Straight answers, fixed scope, measurable outcome.</p>
+          <dl class="o-result">
+            <dt>Result</dt>
+            <dd>Written here, in numbers</dd>
+          </dl>
+          <p style="margin-top:0.95rem"><a class="btn btn-fill" href="#accept">Open the job</a></p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="approach" aria-label="How the job runs">
+      <h2>How the job runs <span class="h2-note">one estimate, three copies</span></h2>
+      <div class="copies">
+        <div class="copy">
+          <p class="copy-edge">White — office copy</p>
+          <h3>Site visit</h3>
+          <p>Before design starts, we find where your revenue comes from: the searches,
+          the audiences, and <b>the one action a visitor must take</b>. No scope gets
+          written until the money page is found.</p>
+        </div>
+        <div class="copy">
+          <p class="copy-edge">Canary — customer copy</p>
+          <h3>Written scope</h3>
+          <p>You get the plan in writing, then the build: <b>fast pages, clear
+          hierarchy</b>, content engineered to rank and persuade. Fixed scope,
+          no surprises on the invoice.</p>
+        </div>
+        <div class="copy">
+          <p class="copy-edge">Pink — file copy</p>
+          <h3>The return, on file</h3>
+          <p>Analytics, Search Console, and CRM tie-ins from day one — so every
+          dollar spent on the site can <b>point to the dollars it produced</b>.
+          The file copy keeps the score.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCEPTANCE -->
+    <section class="accept" id="accept" aria-label="Accept the estimate">
+      <h2>Accept the estimate</h2>
+      <p class="lede">Got a site that should be earning more? Tell me what it needs to
+      produce — <b>leads, orders, calls</b> — and I'll show you how we get there.</p>
+      <div class="accept-grid">
+        <div>
+          <div class="sig">
+            <div class="line"></div>
+            <small>Accepted by</small>
+          </div>
+          <div class="btns">
+            <a class="btn btn-fill" href="mailto:hello@codybutryn.com?subject=Project%20estimate">Start a project</a>
+            <a class="btn btn-line num" href="tel:+12628939776">Call (262) 893-9776</a>
+          </div>
+        </div>
+        <p class="ways">
+          <span class="k">Email</span><br><a href="mailto:hello@codybutryn.com">hello@codybutryn.com</a><br>
+          <span class="k">LinkedIn</span><br><a href="https://www.linkedin.com/in/codybutryn" target="_blank" rel="noopener">/in/codybutryn</a><br>
+          <span class="k">Base</span><br>Milwaukee, Wisconsin
+        </p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="fine">
+  <span class="num">FORM CB-100 · REV 8/26 · © 2026 CODY BUTRYN</span>
+  <span>Designed &amp; built by hand — this site is the portfolio</span>
+</footer>
+
+<script>
+  // Stamps press on once, when first seen. Reduced-motion handled in CSS.
+  (function(){
+    var stamps = document.querySelectorAll('.stamped');
+    if (!('IntersectionObserver' in window)) {
+      stamps.forEach(function(s){ s.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.6 });
+    stamps.forEach(function(s){ io.observe(s); });
+  })();
+</script>
+</body>
+</html>
