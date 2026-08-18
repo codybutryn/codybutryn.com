@@ -34,6 +34,7 @@
     --print:'Libre Franklin',Arial,sans-serif;
     --type:'Courier Prime','Courier New',monospace;
     --ease-out:cubic-bezier(0.23,1,0.32,1);
+    --r-tab:6px; --r-stamp:5px; --r-badge:3px; --r-scroll:7px;
   }
   html{scroll-behavior:smooth}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -54,7 +55,7 @@
   .tab{
     font-family:var(--print);font-weight:700;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;
     color:var(--carbon);background:var(--paper-dim);border:1px solid var(--rule-strong);border-bottom:none;
-    border-radius:6px 6px 0 0;padding:0.62rem 1.15rem 0.7rem;text-decoration:none;position:relative;top:1px;
+    border-radius:var(--r-tab) var(--r-tab) 0 0;padding:0.62rem 1.15rem 0.7rem;text-decoration:none;position:relative;top:1px;
     transition:background-color 150ms var(--ease-out),transform 120ms var(--ease-out);
   }
   .tab:active{transform:scale(0.97)}
@@ -128,7 +129,7 @@
   .totals>a:last-child{border-right:none}
   @media (hover:hover) and (pointer:fine){.totals>a:hover{background:var(--canary)}}
   .totals>a:active{transform:scale(0.99)}
-  .totals b{display:block;font-family:var(--type);font-weight:700;font-size:clamp(1.15rem,2.6vw,1.55rem);color:var(--ink);letter-spacing:-0.01em}
+  .totals b{display:block;font-family:var(--type);font-weight:700;font-size:clamp(1.05rem,2.6vw,1.45rem);color:var(--ink);letter-spacing:-0.01em}
   .totals small{display:block;font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--carbon-soft);margin-top:0.3rem;line-height:1.5}
   .totals .jn{color:var(--stamp);font-weight:700}
   @media (max-width:720px){.totals{grid-template-columns:1fr 1fr}.totals>a:nth-child(2){border-right:none}.totals>a:nth-child(-n+2){border-bottom:1px solid var(--rule-strong)}}
@@ -136,12 +137,12 @@
   /* stamps */
   .stamp{
     display:inline-block;font-weight:800;text-transform:uppercase;color:var(--stamp);
-    border:3px solid var(--stamp);border-radius:5px;padding:0.32em 0.6em;
+    border:3px solid var(--stamp);border-radius:var(--r-stamp);padding:0.32em 0.6em;
     letter-spacing:0.12em;transform:rotate(-6deg);
     mask-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="140" height="60"><filter id="r"><feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.92 0"/><feComposite operator="over" in2="SourceGraphic"/></filter><rect width="140" height="60" fill="white" filter="url(%23r)"/></svg>');
     mask-size:cover;
   }
-  .stamp-avail{position:absolute;top:0.4rem;right:0;font-size:clamp(0.72rem,1.6vw,0.95rem);rotate:none}
+  .stamp-avail{position:absolute;top:0.4rem;right:0;font-size:clamp(0.72rem,1.6vw,0.88rem);rotate:none}
   .stamp-paid{font-size:0.78rem;transform:rotate(-8deg)}
   .js .stamped{opacity:0;transform:rotate(-6deg) scale(1.25)}
   .js .stamped.in{opacity:1;transform:rotate(-6deg) scale(1);transition:opacity 220ms var(--ease-out),transform 220ms var(--ease-out)}
@@ -200,12 +201,12 @@
   .o-site{margin-left:auto;font-family:var(--type);font-size:0.78rem;color:var(--carbon);text-decoration-color:var(--rule-strong);text-underline-offset:3px;white-space:nowrap;display:inline-flex;align-items:center;gap:0.35em}
   .o-site svg{width:0.72em;height:0.72em;flex:none}
   @media (hover:hover) and (pointer:fine){.o-site:hover{color:var(--stamp)}}
-  .o-role{font-family:var(--type);font-size:0.82rem;color:var(--carbon-soft);margin-bottom:0.75rem}
+  .o-role{font-family:var(--type);font-size:0.88rem;color:var(--carbon-soft);margin-bottom:0.75rem}
   .o-scope{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--carbon-soft)}
   .o-scope-v{font-family:var(--type);font-size:0.85rem;line-height:1.7;margin:0.3rem 0 0.9rem}
   .o-result{display:flex;align-items:center;gap:0.9rem;border:1.5px solid var(--carbon);background:var(--paper-dim);padding:0.6rem 0.8rem}
   .o-result dt{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--carbon-soft);flex:none}
-  .o-result dd{font-family:var(--type);font-weight:700;font-size:0.95rem;color:var(--ink)}
+  .o-result dd{font-family:var(--type);font-weight:700;font-size:0.88rem;color:var(--ink)}
   .o-result .stamp-paid{margin-left:auto;flex:none}
   .o-shot{position:relative;margin:0.35rem 0 0.95rem}
   .order.flag .o-shot{margin:0}
@@ -219,7 +220,7 @@
   .copy:nth-child(1){background:var(--paper);transform:rotate(-0.4deg)}
   .copy:nth-child(2){background:var(--canary);transform:rotate(0.35deg)}
   .copy:nth-child(3){background:var(--pink);transform:rotate(-0.3deg)}
-  .copy-edge{font-family:var(--type);font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--carbon-soft);border-bottom:1px dashed var(--rule-strong);padding-bottom:0.5rem;margin-bottom:0.85rem}
+  .copy-edge{font-family:var(--type);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--carbon-soft);border-bottom:1px dashed var(--rule-strong);padding-bottom:0.5rem;margin-bottom:0.85rem}
   .copy h3{font-weight:800;font-size:1.02rem;text-transform:uppercase;letter-spacing:0.04em;color:var(--carbon);margin-bottom:0.5rem}
   .copy p{font-size:0.88rem;line-height:1.65;color:#3E3A32}
   .copy p b{color:var(--ink)}
@@ -227,7 +228,7 @@
   /* ── ACCEPTANCE ── */
   .accept{background:var(--carbon);color:var(--paper);margin:0 calc(clamp(1.1rem,4vw,3rem) * -1);padding:2.6rem clamp(1.8rem,5vw,3.6rem) 2.8rem}
   .accept h2{color:var(--paper);border-top-color:var(--paper);border-bottom-color:rgba(251,250,245,0.35);margin-bottom:1.2rem}
-  .accept .lede{font-family:var(--type);font-size:clamp(1.02rem,2.4vw,1.3rem);line-height:1.55;max-width:52ch;margin-bottom:1.7rem}
+  .accept .lede{font-family:var(--type);font-size:clamp(1rem,2.4vw,1.12rem);line-height:1.55;max-width:52ch;margin-bottom:1.7rem}
   .accept .lede b{color:var(--canary);font-weight:700}
   .accept-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:2rem;align-items:end}
   @media (max-width:720px){.accept-grid{grid-template-columns:1fr}}
@@ -261,7 +262,7 @@
   /* custom scrollbar — the desk's own */
   ::-webkit-scrollbar{width:12px}
   ::-webkit-scrollbar-track{background:var(--desk)}
-  ::-webkit-scrollbar-thumb{background:var(--rule-strong);border:3px solid var(--desk);border-radius:7px}
+  ::-webkit-scrollbar-thumb{background:var(--rule-strong);border:3px solid var(--desk);border-radius:var(--r-scroll)}
   ::-webkit-scrollbar-thumb:hover{background:var(--carbon)}
 </style>
 </head>

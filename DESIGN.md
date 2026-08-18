@@ -14,6 +14,8 @@ colors:
   rule-strong: "#8FA0B8"
   ink: "#23201B"
   stamp: "#A63325"
+  overlay: "rgba(30,40,55,0.93)"
+  print-page: "#FFFFFF"
 typography:
   display:
     fontFamily: "Libre Franklin, Arial, sans-serif"
@@ -65,9 +67,10 @@ typography:
     letterSpacing: "0.12em"
 rounded:
   none: "0"
-  tab: "6px 6px 0 0"
+  tab: "6px"
   stamp: "5px"
   badge: "3px"
+  scroll: "7px"
 spacing:
   tab-gap: "6px"
   grid-gap: "20px"
@@ -201,6 +204,10 @@ A carbonless form set: two warm papers, one desk, one carbon blue for everything
 - **Rule Strong** (`{colors.rule-strong}`): Heavier rules — sheet border, card borders, the bottom rule under section bars, underline color for links, scrollbar thumb.
 - **Ink** (`{colors.ink}`): Typed-entry black-brown. All Courier Prime fill-ins, `h1`, results, and bolded body emphasis.
 
+### Surface-only
+- **Overlay** (`{colors.overlay}`): The lightbox scrim. The one cool, non-paper surface in the system, and the only place a neutral shadow is permitted.
+- **Print Page** (`{colors.print-page}`): The résumé's printed page under `@media print`. The system's only pure white, and it exists because paper stock is the printer's job, not the stylesheet's.
+
 ### Named Rules
 
 **The One Stamp Ink Rule.** Red is state, and state only: availability, PAID, and reference numbers. If a new element needs red for emphasis rather than for status, it does not get red — it gets a canary highlight or carbon weight.
@@ -267,7 +274,7 @@ The system is paper-flat with warm ambient lift. There are no hard-offset shadow
 
 Square by default. Borders — not radius, not fill — do the structural work: 1px `{colors.rule}` hairlines between table rows, 1px–1.5px `{colors.rule-strong}` around sheets and cards, 1.5px `{colors.carbon}` around anything that is a field or a result, and a 3px **double** rule beneath the letterhead and above every section bar. The double rule is the system's signature stroke and marks a division of the form.
 
-Radius is used in exactly four places, each earning it: folder tabs (`{rounded.tab}` — top corners only, which is what makes them tabs), stamps (`{rounded.stamp}`), gallery badges (`{rounded.badge}`), and the scrollbar thumb. Nothing else is rounded.
+Radius is used in exactly four places, each earning it: folder tabs (`{rounded.tab}`, applied to the top two corners only, which is what makes them tabs), stamps (`{rounded.stamp}`), gallery badges (`{rounded.badge}`), and the scrollbar thumb (`{rounded.scroll}`). Nothing else is rounded.
 
 Two textures make the paper physical, both inline SVG filters with no raster cost: a fractal-noise tint over the desk, and a turbulence mask on stamps that eats ink coverage so the impression reads as rubber on paper. Slight rotations are the third physical device: the triplicate copies sit at −0.4°/+0.35°/−0.3°, screenshots at +0.7°, stamps at −6°/−8°. Rotation stays under 1° for sheets; only stamps rotate visibly.
 
