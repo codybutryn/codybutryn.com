@@ -278,6 +278,23 @@ Radius is used in exactly four places, each earning it: folder tabs (`{rounded.t
 
 Two textures make the paper physical, both inline SVG filters with no raster cost: a fractal-noise tint over the desk, and a turbulence mask on stamps that eats ink coverage so the impression reads as rubber on paper. Slight rotations are the third physical device: the triplicate copies sit at −0.4°/+0.35°/−0.3°, screenshots at +0.7°, stamps at −6°/−8°. Rotation stays under 1° for sheets; only stamps rotate visibly.
 
+### The Set
+
+Every page is a **carbonless set**, not a single sheet. `.sheet` carries two pseudo-element underlays offset down-and-right — `::before` in `{colors.canary}` at 5px, `::after` in `{colors.pink}` at 10px — each with a 1px `{colors.rule-strong}` edge, sitting at `z-index:-1` so only the offset margin shows. The result is a visible stack: white on top, the customer's canary beneath it, the pink file copy deepest. This is what makes the site read as *paperwork* rather than as one styled page, and it is the single highest-leverage physical device in the system.
+
+Below 640px the underlays collapse to a downward-only peek (`inset:0 0 -4px 0` and `0 0 -8px 0`), because a horizontal offset at that width pushes past the viewport edge. In `@media print` they are hidden outright — a printed page is one sheet.
+
+**The Set Is Not Decoration Rule.** The canary and pink underlays are the same two stocks named in the triplicate process section. If a new surface is added, it inherits the set; a page rendered as a lone white sheet has left the world.
+
+### Physical Devices
+
+Four devices beyond texture and rotation, each earning its place by being something that happens to real forms:
+
+- **Staple** (`.staple`): a 26px inline SVG at the sheet's top-left corner, in `{colors.rule-strong}`, with two faint legs implying the back of the set. Purely decorative, `pointer-events:none`, hidden in print.
+- **Carbon misregistration**: `text-shadow: 1.5px 1.4px 0 rgba(30,58,95,0.17)` on the letterhead name — the second impression landing a hair off the first. Kept in carbon, never in stamp red, because red is state.
+- **Perforation** (`.perf`): a 15px band of `{colors.desk}` circles punched through the paper on a 22px repeat, over a dashed `{colors.rule-strong}` top edge. It spans the full sheet width by negating the gutter padding.
+- **Tear-off stub** (`.stub`): the detachable remittance slip below the perforation, repeating the estimate number, name, and both contact methods, with the primary action as its own button. It is the page's third and final call to action, and it exists because a real estimate ends with something you send back.
+
 ## Components
 
 ### Buttons
@@ -313,7 +330,15 @@ Red 3px outline, 5px radius, uppercase Franklin 800, rotated −6° (availabilit
 A real `<table>` with a caps caption on a 1.5px carbon rule, carbon-soft column heads, and typed cells on hairline row rules. Line-item names are carbon Courier 700; reference numbers are stamp-red links. Below 640px the header row is hidden and rows restack as blocks, keeping the row rule as the separator.
 
 ### The Totals Strip
-Four equal cells inside a single 1.5px carbon frame, divided by `rule-strong` verticals, on `paper-dim`. Each cell is a link: a Courier 700 figure at `clamp(1.15rem, 2.6vw, 1.55rem)` over a caps caption with a stamp-red job reference. Hover fills the cell canary. At 720px it becomes 2×2 and the internal borders re-map.
+Four equal cells inside a single 1.5px carbon frame, divided by `rule-strong` verticals, on `paper-dim`. Each cell is a link: a Courier 700 figure at `{typography.headline}` scale — `clamp(1.5rem, 3.1vw, 2.35rem)`, tracking `-0.03em` — over a caps caption with a stamp-red job reference. Hover fills the cell canary. At 720px it becomes 2×2 and the internal borders re-map.
+
+**These figures are the page's display type.** The letterhead is set larger in weight but the totals are what the eye lands on, and that is correct for the world: on a real estimate the biggest number is the total. The system deliberately has no oversized statement headline — the `h1` sits in the fill-in face at `{typography.headline}` because it is a typed entry on a form, not a marketing lede. Anything that needs to shout in this system shouts as a number.
+
+### The Terms Panel
+The hero's right column, and the reason the first viewport is not half empty. A 1.5px carbon frame on `paper-dim` with a reversed carbon header bar (`{typography.label}`, paper text), three dotted-rule rows each led by a 14px authored checkmark SVG in carbon, and a footer row divided by a 1.5px carbon rule carrying a `PREPARED BY` label and the initials box. Collapses below the lede at 860px.
+
+### The Initials Box
+A 1.5px carbon square on `paper` holding `CB` in Franklin 800, rotated `-1.5°`. It is the system's only hand-annotation device, and the rotation is what sells it as applied rather than printed. Use it where a form would carry an approval mark; never as a logo.
 
 ### Signature Line (the CTA affordance)
 A 1.5px ink bottom rule at `2.1rem` height with an inline SVG signature scrawl in carbon sitting on it, captioned by a caps label. On the acceptance block the rule and caption invert to paper and `#B7C4D6`. It is decorative-but-meaningful: it frames the mailto button as "signing."

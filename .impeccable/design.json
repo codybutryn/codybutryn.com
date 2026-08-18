@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-18T19:55:05Z",
+  "generatedAt": "2026-08-18T00:00:00Z",
   "title": "Design System: Cody Butryn — The Estimate Packet",
   "extensions": {
     "colorMeta": {
@@ -8,6 +8,7 @@
         "role": "neutral",
         "displayName": "Counter Desk",
         "canonical": "#E9E4D8",
+        "note": "Also punched through the paper as the perforation band's circles — the desk showing through the sheet is what makes the tear-off read as perforated.",
         "tonalRamp": ["oklch(20% 0.014 85)", "oklch(32% 0.016 85)", "oklch(44% 0.018 85)", "oklch(56% 0.020 85)", "oklch(68% 0.022 85)", "oklch(80% 0.022 85)", "oklch(91.5% 0.018 85)", "oklch(97% 0.010 85)"]
       },
       "paper": {
@@ -20,18 +21,21 @@
         "role": "neutral",
         "displayName": "Shaded Form Region",
         "canonical": "#F4F1E7",
+        "note": "Now also the ground of the terms panel, which is the largest single paper-dim region in the build.",
         "tonalRamp": ["oklch(20% 0.010 92)", "oklch(32% 0.011 92)", "oklch(44% 0.012 92)", "oklch(56% 0.013 92)", "oklch(68% 0.013 92)", "oklch(80% 0.013 92)", "oklch(90% 0.012 92)", "oklch(96% 0.011 92)"]
       },
       "canary": {
         "role": "tertiary",
         "displayName": "Canary Duplicate",
         "canonical": "#F6E9C0",
+        "note": "Carries a structural role beyond highlighting: it is the .sheet::before underlay — the customer's copy in the carbonless set, visible on every page as a 5px down-and-right margin.",
         "tonalRamp": ["oklch(22% 0.048 92)", "oklch(34% 0.058 92)", "oklch(46% 0.066 92)", "oklch(58% 0.072 92)", "oklch(70% 0.074 92)", "oklch(82% 0.070 92)", "oklch(93.5% 0.058 92)", "oklch(97.5% 0.028 92)"]
       },
       "pink": {
         "role": "tertiary",
         "displayName": "Pink File Copy",
         "canonical": "#F5DCD6",
+        "note": "The .sheet::after underlay at 10px — the file copy, deepest in the set. Its only two uses (the triplicate section and the underlay) are the same stock.",
         "tonalRamp": ["oklch(22% 0.030 28)", "oklch(34% 0.038 28)", "oklch(46% 0.044 28)", "oklch(58% 0.048 28)", "oklch(70% 0.048 28)", "oklch(82% 0.044 28)", "oklch(91% 0.034 28)", "oklch(97% 0.016 28)"]
       },
       "carbon": {
@@ -56,12 +60,14 @@
         "role": "neutral",
         "displayName": "Hairline Rule",
         "canonical": "#C9D0DC",
+        "note": "Drawn dotted in the terms panel's row dividers — the same hairline weight, a different stroke, which is how a printed form separates terms from table rows.",
         "tonalRamp": ["oklch(20% 0.016 255)", "oklch(32% 0.018 255)", "oklch(44% 0.020 255)", "oklch(56% 0.022 255)", "oklch(68% 0.022 255)", "oklch(80% 0.020 255)", "oklch(84% 0.020 255)", "oklch(95% 0.012 255)"]
       },
       "rule-strong": {
         "role": "neutral",
         "displayName": "Heavy Rule",
         "canonical": "#8FA0B8",
+        "note": "Also the staple's ink, the edge of both underlay copies, and the perforation's dashed top edge. The heavy rule is the system's 'edge of paper' color.",
         "tonalRamp": ["oklch(20% 0.026 256)", "oklch(32% 0.032 256)", "oklch(44% 0.038 256)", "oklch(56% 0.042 256)", "oklch(68.5% 0.040 256)", "oklch(80% 0.032 256)", "oklch(89% 0.022 256)", "oklch(96% 0.012 256)"]
       },
       "ink": {
@@ -92,14 +98,14 @@
       }
     },
     "typographyMeta": {
-      "display": { "displayName": "Letterhead Name", "purpose": "The owner's name at the top-left of the letterhead. One per page, Franklin 900 uppercase in carbon blue. Index's .lh-name and the résumé's .lh-name are now set identically; the gallery's h1 shares the ramp step at its own vw slope." },
-      "headline": { "displayName": "Typed Job Line", "purpose": "The one fill-in set at display scale: the estimate's h1, Courier Prime 700 in ink, capped at 24ch so it breaks like a typed entry." },
-      "title": { "displayName": "Section Bar", "purpose": "Section headings. Inseparable from their 3px double top rule and 1px bottom rule. The totals-strip figure now sits on this same step." },
+      "display": { "displayName": "Letterhead Name", "purpose": "The owner's name at the top-left of the letterhead. One per page, Franklin 900 uppercase in carbon blue, now carrying the carbon misregistration text-shadow. Index's .lh-name and the résumé's .lh-name are set identically; the gallery's h1 shares the ramp step at its own vw slope and a lighter 0.15-alpha misregistration." },
+      "headline": { "displayName": "Typed Job Line", "purpose": "The largest step on the ramp, held by two things: the estimate's h1 (Courier Prime 700 in ink, capped at 24ch so it breaks like a typed entry) and the totals-strip figures, which now run the full clamp(1.5rem,3.1vw,2.35rem) at -0.03em. Those figures are the page's display type — on a real estimate the biggest number is the total." },
+      "title": { "displayName": "Section Bar", "purpose": "Section headings. Inseparable from their 3px double top rule and 1px bottom rule." },
       "subtitle": { "displayName": "Record Title", "purpose": "Work-order names, copy-set headings, gallery card titles, résumé job titles." },
       "body": { "displayName": "Printed Prose", "purpose": "Pre-printed explanatory copy in carbon-soft, max 62ch." },
-      "typed": { "displayName": "Fill-In", "purpose": "Every value entered for this customer: contact lines, scope values, results, résumé bullets and profile, gallery notes and card titles, fine print. 0.88rem is the ramp step these snapped onto." },
-      "label": { "displayName": "Form Label", "purpose": "Field names, column heads, box headers, tab text, signature captions, the copy-set edge marks. The workhorse of the printed voice." },
-      "stamp": { "displayName": "Stamp Register", "purpose": "Stamps, badges, and buttons share this voice, which is what makes the CTA feel like part of the form. The availability stamp scales between the label and typed steps." }
+      "typed": { "displayName": "Fill-In", "purpose": "Every value entered for this customer: contact lines, scope values, results, résumé bullets and profile, gallery notes and card titles, the terms rows, the stub's remittance line, fine print." },
+      "label": { "displayName": "Form Label", "purpose": "Field names, column heads, box headers, tab text, signature captions, the copy-set edge marks, the terms panel's reversed carbon header, the stub's caps kicker-free instruction line. The workhorse of the printed voice." },
+      "stamp": { "displayName": "Stamp Register", "purpose": "Stamps, badges, and buttons share this voice, which is what makes the CTA feel like part of the form. The availability stamp scales between the label and typed steps and now sits in its own right-aligned .stamp-row band rather than an absolute corner." }
     },
     "shadows": [
       { "name": "sheet-lift", "value": "0 2px 5px rgba(35,32,27,0.12), 0 10px 22px rgba(35,32,27,0.14)", "purpose": "The main sheet and the clipped screenshots. The strongest elevation in the system." },
@@ -110,7 +116,7 @@
     ],
     "motion": [
       { "name": "ease-out", "value": "cubic-bezier(0.23,1,0.32,1)", "purpose": "The system's only easing curve, tokenized as --ease-out in all three files. Every transition and the stamp impression use it." },
-      { "name": "press", "value": "transform 120ms cubic-bezier(0.23,1,0.32,1)", "purpose": "Active press on controls: scale(0.97) on buttons and tabs, scale(0.99) on cards. Fires on touch as well as pointer." },
+      { "name": "press", "value": "transform 120ms cubic-bezier(0.23,1,0.32,1)", "purpose": "Active press on controls: scale(0.97) on buttons and tabs, scale(0.99) on cards and totals cells. Fires on touch as well as pointer." },
       { "name": "tint", "value": "background-color 150ms cubic-bezier(0.23,1,0.32,1)", "purpose": "Hover fill changes on buttons, tabs, and totals cells." },
       { "name": "card-hover", "value": "transform 160ms cubic-bezier(0.23,1,0.32,1), box-shadow 160ms cubic-bezier(0.23,1,0.32,1)", "purpose": "Filed-card lift, gated behind (hover:hover) and (pointer:fine)." },
       { "name": "stamp-press", "value": "opacity 220ms cubic-bezier(0.23,1,0.32,1), transform 220ms cubic-bezier(0.23,1,0.32,1)", "purpose": "The one authored moment: scale(1.25) → scale(1) at the stamp's rotation, fired once by IntersectionObserver at threshold 0.6 then unobserved." },
@@ -118,22 +124,66 @@
     ],
     "breakpoints": [
       { "name": "gallery-3-to-2", "value": "920px" },
+      { "name": "hero-split-collapse", "value": "860px" },
       { "name": "columns-collapse", "value": "820px" },
       { "name": "letterhead-stack", "value": "720px" },
       { "name": "resume-letterhead-stack", "value": "680px" },
       { "name": "phone", "value": "640px" },
       { "name": "gallery-single", "value": "560px" }
     ],
+    "physicalDevices": [
+      { "name": "The Set", "value": ".sheet::before{inset:5px -5px -5px 5px;background:var(--canary)} .sheet::after{inset:10px -10px -10px 10px;background:var(--pink)} — both 1px solid var(--rule-strong) at z-index:-1", "purpose": "Two pseudo-element underlays offset down-and-right so every page reads as a carbonless set: white on top, canary customer copy beneath, pink file copy deepest. Applied on all three surfaces. Below 640px they collapse to a downward-only peek (inset:0 0 -4px 0 / 0 0 -8px 0) so the set never pushes past the viewport edge; hidden outright in @media print, because a printed page is one sheet." },
+      { "name": "Staple", "value": ".staple{position:absolute;top:14px;left:14px;width:26px;height:26px;color:var(--rule-strong);z-index:3;pointer-events:none}", "purpose": "A 26px authored inline SVG through the top-left corner of the set, with two faint legs at 0.55 opacity implying the back of the stack. Drops to 19px at 9px inset below 640px. Decorative, non-interactive, hidden in print." },
+      { "name": "Carbon misregistration", "value": "text-shadow:1.5px 1.4px 0 rgba(30,58,95,0.17)", "purpose": "The second impression landing a hair off the first, on the index and résumé letterhead names; the gallery h1 runs the same offset at 0.15 alpha. Deliberately carbon and never stamp red, because red is state. This is a printing artifact drawn in type, not an elevation shadow — it is recorded here rather than in the shadow vocabulary so nothing inherits a hard offset box-shadow from it." },
+      { "name": "Perforation", "value": ".perf{height:15px;margin:0 calc(clamp(1.1rem,4vw,3rem) * -1);background-image:radial-gradient(circle 3.2px at 11px 7.5px, var(--desk) 97%, transparent 100%);background-size:22px 15px;background-repeat:repeat-x;border-top:1px dashed var(--rule-strong)}", "purpose": "A 15px band of desk-colored circles punched through the paper on a 22px repeat over a dashed heavy-rule edge, spanning the full sheet width by negating the gutter. The one place the desk shows through the sheet." },
+      { "name": "Sheet and stamp rotation", "value": "copies −0.4°/+0.35°/−0.3°, screenshots +0.7°, initials box −1.5°, stamps −6°/−8°", "purpose": "Rotation stays at or under 1.5° for anything made of paper; only stamps rotate visibly. The initials box is the sole hand-annotation rotation." }
+    ],
     "notes": [
       "There is no shared stylesheet: the :root token block is duplicated verbatim in the <style> head of index.html, gallery.html, and resume.html. Any token change is a three-file edit. Surface-only tokens are the deliberate exception — --overlay is declared in gallery.html only and --print-page in resume.html only, because each has exactly one host surface.",
-      "Radius is tokenized in all three files as --r-tab (6px), --r-stamp (5px), --r-badge (3px), --r-scroll (7px). Each file declares only the radii it uses: index has all four, gallery has tab/badge/scroll, resume has tab/scroll.",
+      "The Set, the staple, and the misregistration are also duplicated across all three heads for the same reason. A new surface that omits them has left the world; a page rendered as a lone white sheet is off-system.",
+      "Radius is tokenized in all three files as --r-tab (6px), --r-stamp (5px), --r-badge (3px), --r-scroll (7px). Each file declares only the radii it uses: index has all four, gallery has tab/badge/scroll, resume has tab/scroll. The underlay copies, the staple, the terms panel, the initials box, and the stub are all square — none of them introduced a new radius.",
       "The folder-tab shape is a rule, not a token: rounded.tab is a single scalar corner radius and the top-two-corners shape lives in the CSS as border-radius: var(--r-tab) var(--r-tab) 0 0. A radius linter that stringifies the four resolved corners will report the tab as unmatched; both constituent values (rounded.tab and rounded.none) are documented, and no shorthand token should be invented to silence it.",
-      "Every font size in the build resolves to a step of the documented type ramp. The off-ramp literals that had drifted into the totals figure, the availability stamp, work-order roles and results, the copy-set edge marks, the acceptance lede, the gallery title/notes/card titles, and the résumé name/profile/bullets were snapped back onto the ramp; the résumé letterhead name is now identical to index's.",
-      "The résumé's print output is a shipping surface. Its two-column grid collapses to one column in print through the 820px breakpoint (US Letter measures under 820 CSS px), not through a print-specific override.",
-      "Stamps are visible by default; the 'js' class set inline on <html> opts into the animation, so a JS failure leaves them printed rather than invisible."
+      "The totals figures moved from the title step to the headline step — clamp(1.5rem,3.1vw,2.35rem), letter-spacing -0.03em, line-height 1.05 — making them the page's display type. The system deliberately has no oversized statement headline: anything that needs to shout here shouts as a number.",
+      "The index hero is a 1.55fr / 1fr grid (.job-top) collapsing to one column at 860px; the availability stamp left absolute positioning for a right-aligned .stamp-row band under the letterhead rule, left-aligned below 860px, because it collided with the terms panel header.",
+      "The terms panel adds one more reversed carbon caps bar and one more all-caps run to the detector's tallies. Both are the printed voice of a form doing exactly what a form does; they are this world's grammar, not new defects.",
+      "The résumé's print output is a shipping surface. Its two-column grid collapses to one column in print through the 820px breakpoint (US Letter measures under 820 CSS px), not through a print-specific override. The print block also hides the staple and both underlay copies.",
+      "Stamps are visible by default; the 'js' class set inline on <html> opts into the animation, so a JS failure leaves them printed rather than invisible.",
+      "Every font size in the build resolves to a step of the documented type ramp; the terms rows and stub line landed on the existing typed and label steps rather than introducing new sizes."
     ]
   },
   "components": [
+    {
+      "name": "The Set (sheet with underlay copies)",
+      "kind": "card",
+      "refersTo": "sheet",
+      "description": "The system's highest-leverage physical device: the page sheet with its canary and pink carbonless copies offset beneath it and a staple through the corner. Every surface inherits this.",
+      "html": "<div class=\"ds-set\"><svg class=\"ds-staple\" viewBox=\"0 0 26 26\" fill=\"none\" aria-hidden=\"true\"><path d=\"M6 9.5 L6 4.5 L20 4.5 L20 9.5\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"square\"/><path d=\"M6.6 20.5 L6.6 16\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" opacity=\"0.55\"/><path d=\"M19.4 20.5 L19.4 16\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" opacity=\"0.55\"/></svg><div class=\"ds-set-pad\"><p class=\"ds-set-name\">Cody Butryn</p><p class=\"ds-set-sub\">White on top · canary to the customer · pink to the file</p></div></div>",
+      "css": ".ds-set{position:relative;background:var(--paper,#FBFAF5);border:1px solid var(--rule-strong,#8FA0B8);box-shadow:0 2px 5px rgba(35,32,27,0.12),0 10px 22px rgba(35,32,27,0.14);margin:0 12px 14px 0;min-height:150px} .ds-set::before,.ds-set::after{content:'';position:absolute;z-index:-1;border:1px solid var(--rule-strong,#8FA0B8);border-radius:0;pointer-events:none} .ds-set::before{inset:5px -5px -5px 5px;background:var(--canary,#F6E9C0)} .ds-set::after{inset:10px -10px -10px 10px;background:var(--pink,#F5DCD6)} @media (max-width:640px){.ds-set::before{inset:0 0 -4px 0}.ds-set::after{inset:0 0 -8px 0}} .ds-staple{position:absolute;top:14px;left:14px;width:26px;height:26px;color:var(--rule-strong,#8FA0B8);z-index:3;pointer-events:none} .ds-set-pad{padding:2.6rem 1.4rem 1.6rem} .ds-set-name{font-family:'Libre Franklin',Arial,sans-serif;font-weight:900;font-size:clamp(1.6rem,4.4vw,2.6rem);letter-spacing:0.015em;line-height:1;text-transform:uppercase;color:var(--carbon,#1E3A5F);text-shadow:1.5px 1.4px 0 rgba(30,58,95,0.17);margin:0} .ds-set-sub{font-family:'Courier Prime','Courier New',monospace;font-size:0.88rem;line-height:1.7;color:var(--carbon-soft,#42597A);margin:0.5rem 0 0}"
+    },
+    {
+      "name": "Terms Panel",
+      "kind": "card",
+      "refersTo": "field-box",
+      "description": "The hero's right column and the reason the first viewport is not half empty: a carbon-framed panel on paper-dim with a reversed caps header, three dotted-rule term rows led by authored checkmarks, and a PREPARED BY footer carrying the initials box.",
+      "html": "<aside class=\"ds-terms\" aria-label=\"Terms of the job\"><h2>Terms of the job</h2><ul><li><svg class=\"ds-tick\" viewBox=\"0 0 14 14\" fill=\"none\" aria-hidden=\"true\"><path d=\"M2 7.4 L5.4 10.8 L12 3.2\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"square\"/></svg><span>Scope written down and fixed before the build starts.</span></li><li><svg class=\"ds-tick\" viewBox=\"0 0 14 14\" fill=\"none\" aria-hidden=\"true\"><path d=\"M2 7.4 L5.4 10.8 L12 3.2\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"square\"/></svg><span>Analytics, Search Console, and CRM tie-ins wired from day one.</span></li><li><svg class=\"ds-tick\" viewBox=\"0 0 14 14\" fill=\"none\" aria-hidden=\"true\"><path d=\"M2 7.4 L5.4 10.8 L12 3.2\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"square\"/></svg><span>Every result reported in revenue, leads, or orders — not impressions.</span></li></ul><p class=\"ds-initials\"><small>Prepared by</small><span class=\"ds-box\">CB</span></p></aside>",
+      "css": ".ds-terms{border:1.5px solid var(--carbon,#1E3A5F);background:var(--paper-dim,#F4F1E7);color:var(--ink,#23201B);max-width:340px} .ds-terms h2{font-family:'Libre Franklin',Arial,sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--paper,#FBFAF5);background:var(--carbon,#1E3A5F);border:0;margin:0;padding:0.42rem 0.7rem;display:block} .ds-terms ul{list-style:none;margin:0;padding:0.55rem 0.7rem 0.2rem} .ds-terms li{display:flex;gap:0.55rem;align-items:flex-start;font-family:'Courier Prime','Courier New',monospace;font-size:0.78rem;line-height:1.6;padding:0.42rem 0;border-bottom:1px dotted var(--rule,#C9D0DC)} .ds-terms li:last-child{border-bottom:none} .ds-tick{flex:none;width:14px;height:14px;margin-top:0.14rem;color:var(--carbon,#1E3A5F)} .ds-initials{display:flex;align-items:center;gap:0.6rem;border-top:1.5px solid var(--carbon,#1E3A5F);padding:0.6rem 0.7rem;margin:0} .ds-initials small{font-family:'Libre Franklin',Arial,sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--carbon-soft,#42597A)} .ds-box{font-family:'Libre Franklin',Arial,sans-serif;font-weight:800;font-size:0.78rem;letter-spacing:0.06em;color:var(--carbon,#1E3A5F);border:1.5px solid var(--carbon,#1E3A5F);background:var(--paper,#FBFAF5);padding:0.24rem 0.5rem;margin-left:auto;transform:rotate(-1.5deg)}"
+    },
+    {
+      "name": "Initials Box",
+      "kind": "custom",
+      "refersTo": "field-box",
+      "description": "The system's only hand-annotation device: a carbon square on paper holding the owner's initials in Franklin 800, rotated −1.5° so it reads as applied rather than printed. Use where a form would carry an approval mark; never as a logo.",
+      "html": "<span class=\"ds-initials-box\">CB</span>",
+      "css": ".ds-initials-box{display:inline-block;font-family:'Libre Franklin',Arial,sans-serif;font-weight:800;font-size:0.78rem;letter-spacing:0.06em;color:var(--carbon,#1E3A5F);border:1.5px solid var(--carbon,#1E3A5F);background:var(--paper,#FBFAF5);border-radius:0;padding:0.24rem 0.5rem;transform:rotate(-1.5deg)}"
+    },
+    {
+      "name": "Perforation and Tear-Off Stub",
+      "kind": "custom",
+      "refersTo": "button-fill",
+      "description": "The page's ending: desk-colored circles punched through the sheet on a dashed edge, and below them the detachable remittance slip repeating the estimate number, the name, both contact methods, and the primary action as the third and final CTA.",
+      "html": "<div class=\"ds-perf\" aria-hidden=\"true\"></div><div class=\"ds-stub\"><div class=\"ds-stub-l\"><span class=\"ds-k\">Detach and return — or just send it back by email</span><p>ESTIMATE <b class=\"ds-num\">№ 0001</b> · <b>Cody Butryn</b>, Milwaukee, Wis.<br><a href=\"mailto:hello@codybutryn.com\">hello@codybutryn.com</a> · <a href=\"tel:+12628939776\" class=\"ds-num\">(262) 893-9776</a></p></div><div class=\"ds-stub-r\"><a class=\"ds-stub-btn\" href=\"mailto:hello@codybutryn.com?subject=Project%20estimate\">Start a project</a></div></div>",
+      "css": ".ds-perf{height:15px;background-color:var(--paper,#FBFAF5);background-image:radial-gradient(circle 3.2px at 11px 7.5px, var(--desk,#E9E4D8) 97%, transparent 100%);background-size:22px 15px;background-repeat:repeat-x;border-top:1px dashed var(--rule-strong,#8FA0B8)} .ds-stub{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap;background:var(--paper,#FBFAF5);padding:1.15rem 1rem 1.6rem;color:var(--ink,#23201B)} .ds-stub-l .ds-k{font-family:'Libre Franklin',Arial,sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--carbon-soft,#42597A)} .ds-stub-l p{font-family:'Courier Prime','Courier New',monospace;font-size:0.88rem;line-height:1.75;margin:0.2rem 0 0} .ds-stub-l b{color:var(--ink,#23201B);font-weight:700} .ds-num{font-variant-numeric:tabular-nums} .ds-stub-l a{color:var(--carbon,#1E3A5F);text-decoration-color:var(--rule-strong,#8FA0B8);text-underline-offset:3px} @media (hover:hover) and (pointer:fine){.ds-stub-l a:hover{color:var(--stamp,#A63325)}} .ds-stub-r{display:flex;gap:0.7rem;flex-wrap:wrap} .ds-stub-btn{display:inline-block;font-family:'Libre Franklin',Arial,sans-serif;font-weight:800;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.95rem 1.5rem;text-decoration:none;border:1.5px solid var(--carbon,#1E3A5F);border-radius:0;background:var(--carbon,#1E3A5F);color:var(--paper,#FBFAF5);transition:transform 120ms cubic-bezier(0.23,1,0.32,1),background-color 150ms cubic-bezier(0.23,1,0.32,1)} .ds-stub-btn:active{transform:scale(0.97)} .ds-stub-btn:focus-visible{outline:2px solid var(--carbon,#1E3A5F);outline-offset:2px} @media (hover:hover) and (pointer:fine){.ds-stub-btn:hover{background:var(--carbon-deep,#16304F)}}"
+    },
     {
       "name": "Primary Button (fill)",
       "kind": "button",
@@ -170,7 +220,7 @@
       "name": "Work Order Card",
       "kind": "card",
       "refersTo": "sheet",
-      "description": "A filed sheet: square paper on a hairline border with a carbon-ruled head, typed scope, a bordered RESULT row, and the PAID stamp at its right edge. Role and result values sit on the typed ramp step.",
+      "description": "A filed sheet: square paper on a hairline border with a carbon-ruled head, typed scope, a bordered RESULT row, and the PAID stamp at its right edge.",
       "html": "<article class=\"ds-order\"><div class=\"ds-o-head\"><span class=\"ds-o-no\">JOB № 002</span><h3>SydeTasker</h3><a class=\"ds-o-site\" href=\"#\">sydetasker.com<svg viewBox=\"0 0 12 12\" fill=\"none\" aria-hidden=\"true\"><path d=\"M3.5 8.5 L8.5 3.5 M4.6 3.5 H8.5 V7.4\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"square\"/></svg></a></div><p class=\"ds-o-role\">Gig marketplace · head of marketing operations</p><p class=\"ds-o-scope\">Scope</p><p class=\"ds-o-scope-v\">Rebrand, paid campaigns, and a dual-sided loyalty program.</p><dl class=\"ds-o-result\"><dt>Result</dt><dd>+50% job posters in six weeks</dd><span class=\"ds-stamp ds-stamp-paid\">Paid</span></dl></article>",
       "css": ".ds-order{position:relative;background:var(--paper,#FBFAF5);border:1px solid var(--rule-strong,#8FA0B8);box-shadow:0 1px 3px rgba(35,32,27,0.09),0 8px 18px rgba(35,32,27,0.07);padding:1.15rem 1.25rem 1.25rem;font-family:'Libre Franklin',Arial,sans-serif;color:var(--ink,#23201B);transition:transform 160ms cubic-bezier(0.23,1,0.32,1),box-shadow 160ms cubic-bezier(0.23,1,0.32,1)} @media (hover:hover) and (pointer:fine){.ds-order:hover{transform:translateY(-3px);box-shadow:0 3px 6px rgba(35,32,27,0.10),0 16px 32px rgba(35,32,27,0.12)}} .ds-o-head{display:flex;align-items:baseline;gap:0.7rem;flex-wrap:wrap;border-bottom:1.5px solid var(--carbon,#1E3A5F);padding-bottom:0.6rem;margin-bottom:0.8rem} .ds-o-no{font-family:'Courier Prime','Courier New',monospace;font-weight:700;font-size:0.8rem;color:var(--stamp,#A63325);font-variant-numeric:tabular-nums;white-space:nowrap} .ds-o-head h3{font-weight:800;font-size:1.12rem;letter-spacing:0.02em;text-transform:uppercase;color:var(--ink,#23201B);margin:0} .ds-o-site{margin-left:auto;font-family:'Courier Prime','Courier New',monospace;font-size:0.78rem;color:var(--carbon,#1E3A5F);text-decoration-color:var(--rule-strong,#8FA0B8);text-underline-offset:3px;display:inline-flex;align-items:center;gap:0.35em;white-space:nowrap} .ds-o-site svg{width:0.72em;height:0.72em;flex:none} @media (hover:hover) and (pointer:fine){.ds-o-site:hover{color:var(--stamp,#A63325)}} .ds-o-role{font-family:'Courier Prime','Courier New',monospace;font-size:0.88rem;color:var(--carbon-soft,#42597A);margin:0 0 0.75rem} .ds-o-scope{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--carbon-soft,#42597A);margin:0} .ds-o-scope-v{font-family:'Courier Prime','Courier New',monospace;font-size:0.85rem;line-height:1.7;margin:0.3rem 0 0.9rem} .ds-o-result{display:flex;align-items:center;gap:0.9rem;border:1.5px solid var(--carbon,#1E3A5F);background:var(--paper-dim,#F4F1E7);padding:0.6rem 0.8rem;margin:0} .ds-o-result dt{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--carbon-soft,#42597A);flex:none} .ds-o-result dd{font-family:'Courier Prime','Courier New',monospace;font-weight:700;font-size:0.88rem;color:var(--ink,#23201B);margin:0} .ds-o-result .ds-stamp{margin-left:auto;flex:none}"
     },
@@ -178,9 +228,9 @@
       "name": "Stamp",
       "kind": "custom",
       "refersTo": "stamp",
-      "description": "The signature component: red outline at the stamp radius, rotated, with a turbulence SVG mask that erodes the ink so the impression reads as rubber on paper. Visible by default; the press-on animation is a JS opt-in.",
-      "html": "<span class=\"ds-stamp ds-stamp-avail\">Taking new projects</span> <span class=\"ds-stamp ds-stamp-paid\">Paid</span>",
-      "css": ".ds-stamp{display:inline-block;font-family:'Libre Franklin',Arial,sans-serif;font-weight:800;text-transform:uppercase;color:var(--stamp,#A63325);border:3px solid var(--stamp,#A63325);border-radius:var(--r-stamp,5px);padding:0.32em 0.6em;letter-spacing:0.12em;transform:rotate(-6deg);mask-image:url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"60\"><filter id=\"r\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.55\" numOctaves=\"2\" seed=\"7\"/><feColorMatrix values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.92 0\"/><feComposite operator=\"over\" in2=\"SourceGraphic\"/></filter><rect width=\"140\" height=\"60\" fill=\"white\" filter=\"url(%23r)\"/></svg>');mask-size:cover} .ds-stamp-avail{font-size:clamp(0.72rem,1.6vw,0.88rem)} .ds-stamp-paid{font-size:0.78rem;transform:rotate(-8deg)}"
+      "description": "The signature component: red outline at the stamp radius, rotated, with a turbulence SVG mask that erodes the ink so the impression reads as rubber on paper. Visible by default; the press-on animation is a JS opt-in. The availability stamp now rides a right-aligned .ds-stamp-row band under the letterhead rule.",
+      "html": "<div class=\"ds-stamp-row\"><span class=\"ds-stamp ds-stamp-avail\">Taking new projects</span></div> <span class=\"ds-stamp ds-stamp-paid\">Paid</span>",
+      "css": ".ds-stamp-row{display:flex;justify-content:flex-end;padding-top:0.2rem;margin-bottom:0.55rem} @media (max-width:860px){.ds-stamp-row{justify-content:flex-start}} .ds-stamp{display:inline-block;font-family:'Libre Franklin',Arial,sans-serif;font-weight:800;text-transform:uppercase;color:var(--stamp,#A63325);border:3px solid var(--stamp,#A63325);border-radius:var(--r-stamp,5px);padding:0.32em 0.6em;letter-spacing:0.12em;transform:rotate(-6deg);mask-image:url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"60\"><filter id=\"r\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.55\" numOctaves=\"2\" seed=\"7\"/><feColorMatrix values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.92 0\"/><feComposite operator=\"over\" in2=\"SourceGraphic\"/></filter><rect width=\"140\" height=\"60\" fill=\"white\" filter=\"url(%23r)\"/></svg>');mask-size:cover} .ds-stamp-avail{font-size:clamp(0.72rem,1.6vw,0.88rem)} .ds-stamp-paid{font-size:0.78rem;transform:rotate(-8deg)}"
     },
     {
       "name": "Gallery Badge",
@@ -202,9 +252,9 @@
       "name": "Prior Totals Strip",
       "kind": "custom",
       "refersTo": "kpi-tag",
-      "description": "Four linked cells in one carbon frame: a typed figure on the title ramp step over a caps caption with a stamp-red job reference. Hover fills the cell canary.",
+      "description": "Four linked cells in one carbon frame. The figures now run at the headline step — the page's display type, because on a real estimate the biggest number is the total. Hover fills the cell canary; at 720px the strip becomes 2×2 and the internal borders re-map.",
       "html": "<nav class=\"ds-totals\" aria-label=\"Prior job totals on file\"><a href=\"#\"><b>$500K</b><small><span class=\"ds-jn\">№ 005</span> · sales generated, 2021</small></a><a href=\"#\"><b>400+</b><small><span class=\"ds-jn\">№ 001</span> · weekly orders from zero</small></a><a href=\"#\"><b>138</b><small><span class=\"ds-jn\">№ 005</span> · qualified leads delivered</small></a><a href=\"#\"><b>+50%</b><small><span class=\"ds-jn\">№ 002</span> · job posters in six weeks</small></a></nav>",
-      "css": ".ds-totals{display:grid;grid-template-columns:repeat(4,1fr);border:1.5px solid var(--carbon,#1E3A5F);background:var(--paper-dim,#F4F1E7);font-variant-numeric:tabular-nums} .ds-totals>a{display:block;padding:0.85rem 0.9rem;border-right:1px solid var(--rule-strong,#8FA0B8);text-decoration:none;color:inherit;transition:background-color 150ms cubic-bezier(0.23,1,0.32,1)} .ds-totals>a:last-child{border-right:none} .ds-totals>a:active{transform:scale(0.99)} .ds-totals>a:focus-visible{outline:2px solid var(--carbon,#1E3A5F);outline-offset:2px} @media (hover:hover) and (pointer:fine){.ds-totals>a:hover{background:var(--canary,#F6E9C0)}} .ds-totals b{display:block;font-family:'Courier Prime','Courier New',monospace;font-weight:700;font-size:clamp(1.05rem,2.6vw,1.45rem);color:var(--ink,#23201B);letter-spacing:-0.01em} .ds-totals small{display:block;font-family:'Libre Franklin',Arial,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--carbon-soft,#42597A);margin-top:0.3rem;line-height:1.5} .ds-totals .ds-jn{color:var(--stamp,#A63325);font-weight:700}"
+      "css": ".ds-totals{display:grid;grid-template-columns:repeat(4,1fr);border:1.5px solid var(--carbon,#1E3A5F);background:var(--paper-dim,#F4F1E7);font-variant-numeric:tabular-nums;margin:1.6rem 0 1.9rem} .ds-totals>a{display:block;padding:1.05rem 0.9rem 1rem;border-right:1px solid var(--rule-strong,#8FA0B8);text-decoration:none;color:inherit;transition:background-color 150ms cubic-bezier(0.23,1,0.32,1)} .ds-totals>a:last-child{border-right:none} .ds-totals>a:active{transform:scale(0.99)} .ds-totals>a:focus-visible{outline:2px solid var(--carbon,#1E3A5F);outline-offset:2px} @media (hover:hover) and (pointer:fine){.ds-totals>a:hover{background:var(--canary,#F6E9C0)}} .ds-totals b{display:block;font-family:'Courier Prime','Courier New',monospace;font-weight:700;font-size:clamp(1.5rem,3.1vw,2.35rem);color:var(--ink,#23201B);letter-spacing:-0.03em;line-height:1.05} .ds-totals small{display:block;font-family:'Libre Franklin',Arial,sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--carbon-soft,#42597A);margin-top:0.3rem;line-height:1.5} .ds-totals .ds-jn{color:var(--stamp,#A63325);font-weight:700} @media (max-width:720px){.ds-totals{grid-template-columns:1fr 1fr}.ds-totals>a:nth-child(2){border-right:none}.ds-totals>a:nth-child(-n+2){border-bottom:1px solid var(--rule-strong,#8FA0B8)}}"
     },
     {
       "name": "Signature Line",
@@ -252,7 +302,8 @@
       { "name": "The Caps-Get-Tracking Rule", "body": "Uppercase text is never set at default tracking. Labels take 0.14–0.16em, tabs and stamps 0.10–0.12em, section bars 0.09em, the display name 0.015em. Tracking falls as size rises.", "section": "typography" },
       { "name": "The Print Is A Layout Rule", "body": "On the résumé, print is a first-class breakpoint: navigation, the acceptance strip, the print button, and the fine print are hidden; the sheet drops its border, shadow, margin, max-width, and padding so the paper becomes the sheet; links lose underlines; jobs and skill groups get break-inside: avoid. The two-column grid collapses to one column in print via the existing 820px breakpoint (a US Letter page measures under 820 CSS px), not via a print-specific override — so any change to that breakpoint changes the printed résumé. print-color-adjust: exact is set on body so carbon rules and stamp-red dates survive to paper.", "section": "layout" },
       { "name": "The Paper-Only Elevation Rule", "body": "Only things that are sheets of paper cast shadows. Boxes, stamps, tags, chips, table rows, and buttons are printed on the paper and are flat forever.", "section": "elevation" },
-      { "name": "The Hover-Is-A-Fine-Pointer Rule", "body": "Every lift, background shift, and color hover is wrapped in @media (hover:hover) and (pointer:fine). Touch devices get the :active press (scale(0.97) on controls, scale(0.99) on cards) instead — no sticky hover states on phones, which is the primary device here.", "section": "elevation" }
+      { "name": "The Hover-Is-A-Fine-Pointer Rule", "body": "Every lift, background shift, and color hover is wrapped in @media (hover:hover) and (pointer:fine). Touch devices get the :active press (scale(0.97) on controls, scale(0.99) on cards) instead — no sticky hover states on phones, which is the primary device here.", "section": "elevation" },
+      { "name": "The Set Is Not Decoration Rule", "body": "The canary and pink underlays are the same two stocks named in the triplicate process section. If a new surface is added, it inherits the set; a page rendered as a lone white sheet has left the world.", "section": "shapes" }
     ],
     "dos": [
       "Do set every new element in the printed-vs-typed split: Franklin caps for what the form printed, Courier for what was filled in.",

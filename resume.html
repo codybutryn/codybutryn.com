@@ -25,6 +25,7 @@
     --print:'Libre Franklin',Arial,sans-serif;--type:'Courier Prime','Courier New',monospace;
     --ease-out:cubic-bezier(0.23,1,0.32,1);
     --r-tab:6px; --r-scroll:7px;
+    --pink:#F5DCD6;
     --print-page:#FFFFFF;
   }
   body{
@@ -56,7 +57,32 @@
     .tab{padding:0.55rem 0.7rem 0.62rem;font-size:0.7rem;letter-spacing:0.05em;white-space:nowrap;flex:none}
   }
 
-  .sheet{max-width:1020px;margin:0 auto 3.5rem;background:var(--paper);border:1px solid var(--rule-strong);box-shadow:0 2px 5px rgba(35,32,27,0.12),0 10px 22px rgba(35,32,27,0.14)}
+  .sheet{max-width:1020px;margin:0 auto 3.5rem;background:var(--paper);border:1.5px solid var(--rule-strong);box-shadow:0 2px 5px rgba(35,32,27,0.12),0 10px 22px rgba(35,32,27,0.14)}
+
+  /* ── THE SET: carbonless copies beneath the top sheet ── */
+  .sheet{position:relative}
+  .sheet::before,.sheet::after{
+    content:'';position:absolute;z-index:-1;border:1px solid var(--rule-strong);
+    border-radius:0;pointer-events:none;
+  }
+  /* canary — the customer's copy */
+  .sheet::before{inset:5px -5px -5px 5px;background:var(--canary)}
+  /* pink — the file copy, deepest in the stack */
+  .sheet::after{inset:10px -10px -10px 10px;background:var(--pink)}
+  @media (max-width:640px){
+    /* narrow screens: the copies peek downward only, so the set never
+       pushes past the viewport edge */
+    .sheet::before{inset:0 0 -4px 0}
+    .sheet::after{inset:0 0 -8px 0}
+  }
+
+  /* staple through the corner of the set */
+  .staple{position:absolute;top:14px;left:14px;width:26px;height:26px;color:var(--rule-strong);z-index:3;pointer-events:none}
+  @media (max-width:640px){.staple{top:9px;left:9px;width:19px;height:19px}}
+
+  /* carbon misregistration — the second impression, a hair off the first */
+  .lh-name{text-shadow:1.5px 1.4px 0 rgba(30,58,95,0.17)}
+
   .sheet-pad{padding:0 clamp(1.1rem,4vw,2.8rem)}
 
   /* letterhead */
@@ -127,7 +153,8 @@
   /* ── PRINT: the sheet becomes the page ── */
   @media print{
     body{background:var(--print-page)}
-    .tabs,.accept,.btn,.fine{display:none}
+    .tabs,.accept,.btn,.fine,.staple{display:none}
+    .sheet::before,.sheet::after{display:none}
     .sheet{max-width:none;margin:0;border:none;box-shadow:none}
     .sheet-pad{padding:0}
     a{text-decoration:none}
@@ -151,6 +178,7 @@
 </nav>
 
 <main class="sheet">
+  <svg class="staple" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M6 9.5 L6 4.5 L20 4.5 L20 9.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/><path d="M6.6 20.5 L6.6 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.55"/><path d="M19.4 20.5 L19.4 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.55"/></svg>
   <div class="sheet-pad">
 
     <header class="letterhead">

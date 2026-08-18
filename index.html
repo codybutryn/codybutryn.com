@@ -81,6 +81,65 @@
   }
   .sheet-pad{padding:0 clamp(1.1rem,4vw,3rem)}
 
+  /* ── THE SET: carbonless copies beneath the top sheet ── */
+  .sheet{position:relative}
+  .sheet::before,.sheet::after{
+    content:'';position:absolute;z-index:-1;border:1px solid var(--rule-strong);
+    border-radius:0;pointer-events:none;
+  }
+  /* canary — the customer's copy */
+  .sheet::before{inset:5px -5px -5px 5px;background:var(--canary)}
+  /* pink — the file copy, deepest in the stack */
+  .sheet::after{inset:10px -10px -10px 10px;background:var(--pink)}
+  @media (max-width:640px){
+    /* narrow screens: the copies peek downward only, so the set never
+       pushes past the viewport edge */
+    .sheet::before{inset:0 0 -4px 0}
+    .sheet::after{inset:0 0 -8px 0}
+  }
+
+  /* staple through the corner of the set */
+  .staple{position:absolute;top:14px;left:14px;width:26px;height:26px;color:var(--rule-strong);z-index:3;pointer-events:none}
+  @media (max-width:640px){.staple{top:9px;left:9px;width:19px;height:19px}}
+
+  /* carbon misregistration — the second impression, a hair off the first */
+  .lh-name{text-shadow:1.5px 1.4px 0 rgba(30,58,95,0.17)}
+
+  /* ── HERO: two columns, so the right half carries the terms ── */
+  .job-top{display:grid;grid-template-columns:1.55fr 1fr;gap:clamp(1.6rem,3.5vw,3rem);align-items:start}
+  @media (max-width:860px){.job-top{grid-template-columns:1fr;gap:1.6rem}}
+
+  .terms{border:1.5px solid var(--carbon);background:var(--paper-dim)}
+  .terms h2{
+    font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;
+    color:var(--paper);background:var(--carbon);border:0;margin:0;padding:0.42rem 0.7rem;
+    display:block;
+  }
+  .terms ul{list-style:none;margin:0;padding:0.55rem 0.7rem 0.2rem}
+  .terms li{display:flex;gap:0.55rem;align-items:flex-start;font-family:var(--type);font-size:0.78rem;line-height:1.6;padding:0.42rem 0;border-bottom:1px dotted var(--rule)}
+  .terms li:last-child{border-bottom:none}
+  .terms .tick{flex:none;width:14px;height:14px;margin-top:0.14rem;color:var(--carbon)}
+  .terms .initials{display:flex;align-items:center;gap:0.6rem;border-top:1.5px solid var(--carbon);padding:0.6rem 0.7rem}
+  .terms .initials small{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--carbon-soft)}
+  .terms .box{
+    font-family:var(--print);font-weight:800;font-size:0.78rem;letter-spacing:0.06em;color:var(--carbon);
+    border:1.5px solid var(--carbon);background:var(--paper);padding:0.24rem 0.5rem;margin-left:auto;
+    transform:rotate(-1.5deg);
+  }
+
+  /* ── TEAR-OFF STUB ── */
+  .perf{
+    height:15px;margin:0 calc(clamp(1.1rem,4vw,3rem) * -1);
+    background-image:radial-gradient(circle 3.2px at 11px 7.5px, var(--desk) 97%, transparent 100%);
+    background-size:22px 15px;background-repeat:repeat-x;
+    border-top:1px dashed var(--rule-strong);
+  }
+  .stub{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap;padding:1.15rem 0 1.6rem}
+  .stub-l .k{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--carbon-soft)}
+  .stub-l p{font-family:var(--type);font-size:0.88rem;line-height:1.75;margin-top:0.2rem}
+  .stub-l b{color:var(--ink);font-weight:700}
+  .stub-r{display:flex;gap:0.7rem;flex-wrap:wrap}
+
   /* letterhead */
   .letterhead{display:flex;justify-content:space-between;gap:1.5rem;align-items:flex-start;padding-top:clamp(1.6rem,4vw,2.6rem);padding-bottom:1.4rem;border-bottom:3px double var(--carbon)}
   .lh-name{font-weight:900;font-size:clamp(1.6rem,4.4vw,2.6rem);letter-spacing:0.015em;line-height:1;color:var(--carbon);text-transform:uppercase}
@@ -125,11 +184,11 @@
 
   /* prior totals row */
   .totals{display:grid;grid-template-columns:repeat(4,1fr);border:1.5px solid var(--carbon);margin:1.6rem 0 1.9rem;background:var(--paper-dim)}
-  .totals>a{display:block;padding:0.85rem 0.9rem;border-right:1px solid var(--rule-strong);text-decoration:none;transition:background-color 150ms var(--ease-out)}
+  .totals>a{display:block;padding:1.05rem 0.9rem 1rem;border-right:1px solid var(--rule-strong);text-decoration:none;transition:background-color 150ms var(--ease-out)}
   .totals>a:last-child{border-right:none}
   @media (hover:hover) and (pointer:fine){.totals>a:hover{background:var(--canary)}}
   .totals>a:active{transform:scale(0.99)}
-  .totals b{display:block;font-family:var(--type);font-weight:700;font-size:clamp(1.05rem,2.6vw,1.45rem);color:var(--ink);letter-spacing:-0.01em}
+  .totals b{display:block;font-family:var(--type);font-weight:700;font-size:clamp(1.5rem,3.1vw,2.35rem);color:var(--ink);letter-spacing:-0.03em;line-height:1.05}
   .totals small{display:block;font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--carbon-soft);margin-top:0.3rem;line-height:1.5}
   .totals .jn{color:var(--stamp);font-weight:700}
   @media (max-width:720px){.totals{grid-template-columns:1fr 1fr}.totals>a:nth-child(2){border-right:none}.totals>a:nth-child(-n+2){border-bottom:1px solid var(--rule-strong)}}
@@ -142,7 +201,11 @@
     mask-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="140" height="60"><filter id="r"><feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.92 0"/><feComposite operator="over" in2="SourceGraphic"/></filter><rect width="140" height="60" fill="white" filter="url(%23r)"/></svg>');
     mask-size:cover;
   }
-  .stamp-avail{position:absolute;top:0.4rem;right:0;font-size:clamp(0.72rem,1.6vw,0.88rem);rotate:none}
+  /* the received-stamp lands under the letterhead rule, right side, on its own
+     band — it is applied to the form, never across another field's label */
+  .stamp-row{display:flex;justify-content:flex-end;padding-top:0.2rem;margin-bottom:0.55rem}
+  .stamp-avail{font-size:clamp(0.72rem,1.6vw,0.88rem)}
+  @media (max-width:860px){.stamp-row{justify-content:flex-start}}
   .stamp-paid{font-size:0.78rem;transform:rotate(-8deg)}
   .js .stamped{opacity:0;transform:rotate(-6deg) scale(1.25)}
   .js .stamped.in{opacity:1;transform:rotate(-6deg) scale(1);transition:opacity 220ms var(--ease-out),transform 220ms var(--ease-out)}
@@ -253,7 +316,7 @@
   /* ── MOBILE OVERRIDES (declared last so they win) ── */
   @media (max-width:640px){
     /* the stamp stops overprinting the prepared-for line */
-    .stamp-avail{position:static;display:inline-block;margin:0 0 1.1rem;font-size:0.86rem}
+    .stamp-avail{font-size:0.86rem}
     .job{padding-top:1.2rem}
     /* the table caption keeps its own line and full rule */
     .lines caption{display:block;width:100%}
@@ -296,6 +359,7 @@ review, the verdict, DESIGN.md, and every shipping raster carrying its provenanc
 </nav>
 
 <main class="sheet">
+  <svg class="staple" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M6 9.5 L6 4.5 L20 4.5 L20 9.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/><path d="M6.6 20.5 L6.6 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.55"/><path d="M19.4 20.5 L19.4 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.55"/></svg>
   <div class="sheet-pad">
 
     <!-- LETTERHEAD -->
@@ -316,15 +380,41 @@ review, the verdict, DESIGN.md, and every shipping raster carrying its provenanc
 
     <!-- THE JOB -->
     <section class="job" aria-label="The estimate">
-      <span class="stamp stamp-avail stamped">Taking new projects</span>
-      <p class="job-for">PREPARED FOR: <b>your business</b> · OPENS AS <a href="#job-next" class="num">JOB № 006</a></p>
-      <h1>A website that <span class="mark">produces</span>: leads, orders, booked calls.</h1>
-      <p class="job-sub">
-        I'm a web designer with a marketer's scoreboard. Eight-plus years across
-        business development, content, and sales — plus <b>Miltown Eats</b>, my own
-        meal-kit company scaled from zero with my own money on the line. Every job
-        below is measured in <b>revenue, leads, and orders</b>, not pixels.
-      </p>
+      <div class="stamp-row"><span class="stamp stamp-avail stamped">Taking new projects</span></div>
+      <div class="job-top">
+        <div>
+          <p class="job-for">PREPARED FOR: <b>your business</b> · OPENS AS <a href="#job-next" class="num">JOB № 006</a></p>
+          <h1>A website that <span class="mark">produces</span>: leads, orders, booked calls.</h1>
+          <p class="job-sub">
+            I'm a web designer with a marketer's scoreboard. Eight-plus years across
+            business development, content, and sales — plus <b>Miltown Eats</b>, my own
+            meal-kit company scaled from zero with my own money on the line. Every job
+            below is measured in <b>revenue, leads, and orders</b>, not pixels.
+          </p>
+        </div>
+
+        <aside class="terms" aria-label="Terms of the job">
+          <h2>Terms of the job</h2>
+          <ul>
+            <li>
+              <svg class="tick" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7.4 L5.4 10.8 L12 3.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg>
+              <span>Scope written down and fixed before the build starts.</span>
+            </li>
+            <li>
+              <svg class="tick" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7.4 L5.4 10.8 L12 3.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg>
+              <span>Analytics, Search Console, and CRM tie-ins wired from day one.</span>
+            </li>
+            <li>
+              <svg class="tick" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7.4 L5.4 10.8 L12 3.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg>
+              <span>Every result reported in revenue, leads, or orders — not impressions.</span>
+            </li>
+          </ul>
+          <p class="initials">
+            <small>Prepared by</small>
+            <span class="box">CB</span>
+          </p>
+        </aside>
+      </div>
 
       <table class="lines">
         <caption>Scope of work</caption>
@@ -546,6 +636,17 @@ review, the verdict, DESIGN.md, and every shipping raster carrying its provenanc
       </div>
     </section>
 
+    <div class="perf" aria-hidden="true"></div>
+    <div class="stub">
+      <div class="stub-l">
+        <span class="k">Detach and return — or just send it back by email</span>
+        <p>ESTIMATE <b class="num">№ 0001</b> · <b>Cody Butryn</b>, Milwaukee, Wis.<br>
+        <a href="mailto:hello@codybutryn.com">hello@codybutryn.com</a> · <a href="tel:+12628939776" class="num">(262) 893-9776</a></p>
+      </div>
+      <div class="stub-r">
+        <a class="btn btn-fill" href="mailto:hello@codybutryn.com?subject=Project%20estimate">Start a project</a>
+      </div>
+    </div>
   </div>
 </main>
 
